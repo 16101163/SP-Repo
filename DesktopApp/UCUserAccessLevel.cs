@@ -19,7 +19,7 @@ namespace DesktopApp
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            UCAddUser user = new UCAddUser();
+            UCRegisterUser user = new UCRegisterUser();
             panel4.Controls.Add(user);
             user.BringToFront();
             user.Dock = DockStyle.Fill;

@@ -318,7 +318,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>CLIENT ORDER REPORT</Value>
+                  <Value>Receipt</Value>
                   <Style>
                     <FontFamily>Maiandra GD</FontFamily>
                     <FontSize>20pt</FontSize>
@@ -329,10 +329,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.20708in</Top>
-          <Left>1.98833in</Left>
+          <Top>0.05778in</Top>
+          <Left>2.9675in</Left>
           <Height>0.42708in</Height>
-          <Width>3.35417in</Width>
+          <Width>1.05209in</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -425,7 +425,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.11458in</Height>
+      <Height>3.54166in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -486,6 +486,66 @@
           <Height>0.25in</Height>
           <Width>1in</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox9">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Excl. Vat:          278.2608</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox9</rd:DefaultName>
+          <Top>0.44791in</Top>
+          <Left>5.17014in</Left>
+          <Height>0.25in</Height>
+          <Width>1.69792in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox10">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>         Vat:          41.7391</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox9</rd:DefaultName>
+          <Top>0.76736in</Top>
+          <Left>5.17014in</Left>
+          <Height>0.25in</Height>
+          <Width>1.69792in</Width>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

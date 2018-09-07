@@ -1,0 +1,1401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="iBeanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Associative_Payment">
+    <Key>
+      <PropertyRef Name="Payment_ID" />
+      <PropertyRef Name="Payment_Type_ID" />
+    </Key>
+    <Property Name="Payment_ID" Type="int" Nullable="false" />
+    <Property Name="Payment_Type_ID" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="8" Scale="2" />
+  </EntityType>
+  <EntityType Name="Audit_Create_Delete">
+    <Key>
+      <PropertyRef Name="Audit_Create_Delete_ID" />
+    </Key>
+    <Property Name="Audit_Create_Delete_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PK_Row_Effected" Type="int" />
+    <Property Name="Created" Type="bit" />
+    <Property Name="Value" Type="varchar(max)" />
+    <Property Name="Audit_Log_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Audit_Log">
+    <Key>
+      <PropertyRef Name="Audit_Log_ID" />
+    </Key>
+    <Property Name="Audit_Log_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Table_Name" Type="varchar" MaxLength="30" />
+    <Property Name="Date_Time" Type="datetime" />
+    <Property Name="User_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Audit_Update">
+    <Key>
+      <PropertyRef Name="Audit_Update_ID" />
+    </Key>
+    <Property Name="Audit_Update_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PK_Row_Effected" Type="int" />
+    <Property Name="Field_Effected" Type="varchar" MaxLength="30" />
+    <Property Name="Before_Value" Type="varchar(max)" />
+    <Property Name="After_Value" Type="varchar(max)" />
+    <Property Name="Audit_Log_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Baking_Schedule">
+    <Key>
+      <PropertyRef Name="Baking_Schedule_ID" />
+    </Key>
+    <Property Name="Baking_Schedule_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Schedule_Date" Type="date" Nullable="false" />
+    <Property Name="Baking_Quantity" Type="int" Nullable="false" />
+    <Property Name="Stock_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Bussiness_Trading_Hours">
+    <Key>
+      <PropertyRef Name="Trading_Hours_ID" />
+    </Key>
+    <Property Name="Trading_Hours_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Operating_At" Type="varchar" MaxLength="50" />
+    <Property Name="Day_Of_Hours" Type="varchar" MaxLength="30" />
+    <Property Name="Trading_Hours" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Company_Information">
+    <Key>
+      <PropertyRef Name="Company_ID" />
+    </Key>
+    <Property Name="Company_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Company_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Company_Address" Type="varchar" MaxLength="60" />
+    <Property Name="VAT_Number" Type="varchar" MaxLength="13" />
+    <Property Name="Registration_Number" Type="varchar" MaxLength="12" />
+    <Property Name="Email_Address" Type="varchar" MaxLength="60" />
+    <Property Name="Telephone_Number" Type="char" MaxLength="10" />
+    <Property Name="VAT_Percentage" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Logout_Customer" Type="int" />
+    <Property Name="Logout_Employee" Type="int" />
+    <Property Name="Logo" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Corporate_Customer">
+    <Key>
+      <PropertyRef Name="Corporate_Customer_ID" />
+    </Key>
+    <Property Name="Corporate_Customer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VAT_Number" Type="char" MaxLength="13" />
+    <Property Name="Organisation_Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Note" Type="varchar" MaxLength="100" />
+    <Property Name="Work_Number" Type="char" MaxLength="10" />
+    <Property Name="Home_Number" Type="char" MaxLength="10" />
+    <Property Name="Date_Of_Birth" Type="date" />
+    <Property Name="Balance_Owed" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="Corporate_Customer_ID" Type="int" />
+    <Property Name="Customer_Type_ID" Type="int" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Marketing_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Customer_Order">
+    <Key>
+      <PropertyRef Name="Order_ID" />
+    </Key>
+    <Property Name="Order_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_Placed" Type="date" />
+    <Property Name="Date_Due" Type="date" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Note" Type="varchar" MaxLength="100" />
+    <Property Name="Delivery" Type="bit" />
+    <Property Name="Customer_ID" Type="int" />
+    <Property Name="Order_Status_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Customer_Order_Line">
+    <Key>
+      <PropertyRef Name="Order_Line_ID" />
+    </Key>
+    <Property Name="Order_Line_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Order_ID" Type="int" />
+    <Property Name="Stock_ID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+  </EntityType>
+  <EntityType Name="Customer_Type">
+    <Key>
+      <PropertyRef Name="Customer_Type_ID" />
+    </Key>
+    <Property Name="Customer_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_Type_Description" Type="varchar" MaxLength="15" />
+    <Property Name="Customer_Discount" Type="decimal" Precision="5" Scale="2" />
+  </EntityType>
+  <EntityType Name="Delivery_Job">
+    <Key>
+      <PropertyRef Name="Delivery_Job_ID" />
+    </Key>
+    <Property Name="Delivery_Job_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Delivery_Note" Type="varchar" MaxLength="100" />
+    <Property Name="Delivery_Address" Type="varchar" MaxLength="60" />
+    <Property Name="Extra_Charges" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="Delivery_Status_ID" Type="int" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Order_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Delivery_Status">
+    <Key>
+      <PropertyRef Name="Delivery_Status_ID" />
+    </Key>
+    <Property Name="Delivery_Status_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Delivery_Status_Description" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Emergency_Contact">
+    <Key>
+      <PropertyRef Name="Emergency_Contact_ID" />
+    </Key>
+    <Property Name="Emergency_Contact_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Contact_Number" Type="char" MaxLength="10" />
+    <Property Name="Alternative_Number" Type="char" MaxLength="10" />
+    <Property Name="Relationship_ID" Type="int" />
+    <Property Name="Employee_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee_Type">
+    <Key>
+      <PropertyRef Name="Employee_Type_ID" />
+    </Key>
+    <Property Name="Employee_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee_Type_Description" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Employee_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Show_As_Contact" Type="bit" />
+    <Property Name="Alternative_Number" Type="char" MaxLength="10" />
+    <Property Name="Physical_Address" Type="varchar" MaxLength="225" />
+    <Property Name="Profile_Picture" Type="varbinary(max)" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Note" Type="varchar" MaxLength="100" />
+    <Property Name="Start_Date" Type="date" />
+    <Property Name="End_Date" Type="date" />
+    <Property Name="Date_of_Birth" Type="date" />
+    <Property Name="Related_Documents" Type="varbinary(max)" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Employee_Type_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="iBean_User">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email_Address" Type="varchar" MaxLength="60" />
+    <Property Name="Password" Type="varbinary" MaxLength="200" />
+    <Property Name="Name" Type="varchar" MaxLength="20" />
+    <Property Name="Surname" Type="varchar" MaxLength="20" />
+    <Property Name="Cell_Number" Type="char" MaxLength="10" />
+    <Property Name="User_Type_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Ingredient">
+    <Key>
+      <PropertyRef Name="Ingredient_ID" />
+    </Key>
+    <Property Name="Ingredient_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Raw_Material_ID" Type="int" Nullable="false" />
+    <Property Name="Stock_ID" Type="int" Nullable="false" />
+    <Property Name="Quantity_Per_Stock_Unit" Type="int" />
+  </EntityType>
+  <EntityType Name="Marketing">
+    <Key>
+      <PropertyRef Name="Marketing_ID" />
+    </Key>
+    <Property Name="Marketing_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Specials" Type="bit" />
+    <Property Name="Events" Type="bit" />
+    <Property Name="SMS" Type="bit" />
+    <Property Name="Email" Type="bit" />
+  </EntityType>
+  <EntityType Name="Marketing_Template">
+    <Key>
+      <PropertyRef Name="Template_ID" />
+    </Key>
+    <Property Name="Template_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Template_Description" Type="varchar" MaxLength="25" />
+    <Property Name="Template_Text" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Material_Supplied">
+    <Key>
+      <PropertyRef Name="Raw_Material_ID" />
+      <PropertyRef Name="Supplier_ID" />
+    </Key>
+    <Property Name="Raw_Material_ID" Type="int" Nullable="false" />
+    <Property Name="Supplier_ID" Type="int" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="Material_Supplied_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Order_Status">
+    <Key>
+      <PropertyRef Name="Order_Status_ID" />
+    </Key>
+    <Property Name="Order_Status_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Order_Status_Description" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Payment_ID" />
+    </Key>
+    <Property Name="Payment_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_Time" Type="date" />
+    <Property Name="Order_ID" Type="int" />
+    <Property Name="User_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Payment_Type">
+    <Key>
+      <PropertyRef Name="Payment_Type_ID" />
+    </Key>
+    <Property Name="Payment_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Payment_Type_Description" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Price_Over_Time">
+    <Key>
+      <PropertyRef Name="Price_ID" />
+    </Key>
+    <Property Name="Price_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="Begin_date" Type="date" />
+    <Property Name="End_date" Type="date" />
+    <Property Name="Stock_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Purchase_Back_Order">
+    <Key>
+      <PropertyRef Name="Back_Order_ID" />
+    </Key>
+    <Property Name="Back_Order_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Reason" Type="varchar" MaxLength="100" />
+    <Property Name="Delivery_Date" Type="date" />
+    <Property Name="Purchase_Order_ID" Type="int" />
+    <Property Name="Supplier_ID" Type="int" />
+    <Property Name="Order_Status_ID" Type="int" />
+    <Property Name="User_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Purchase_Back_Order_Line">
+    <Key>
+      <PropertyRef Name="Back_Order_ID" />
+      <PropertyRef Name="Raw_Material_ID" />
+    </Key>
+    <Property Name="Back_Order_ID" Type="int" Nullable="false" />
+    <Property Name="Raw_Material_ID" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Purchase_Back_Order_Line_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Purchase_Order">
+    <Key>
+      <PropertyRef Name="Purchase_Order_ID" />
+    </Key>
+    <Property Name="Purchase_Order_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_Placed" Type="date" />
+    <Property Name="Delivery_Date" Type="date" />
+    <Property Name="Supplier_ID" Type="int" />
+    <Property Name="Order_Status_ID" Type="int" />
+    <Property Name="User_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Purchase_Order_Line">
+    <Key>
+      <PropertyRef Name="Purchase_Order_ID" />
+      <PropertyRef Name="Raw_Material_ID" />
+    </Key>
+    <Property Name="Purchase_Order_ID" Type="int" Nullable="false" />
+    <Property Name="Raw_Material_ID" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Purchase_Order_Line_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Raw_Material">
+    <Key>
+      <PropertyRef Name="Raw_Material_ID" />
+    </Key>
+    <Property Name="Raw_Material_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Raw_Material_Description" Type="varchar" MaxLength="50" />
+    <Property Name="Quantity_On_Hand" Type="decimal" Precision="14" Scale="6" />
+    <Property Name="Minimum_Reorder_Level" Type="int" />
+    <Property Name="Defualt_Supplier_ID" Type="int" />
+    <Property Name="Note" Type="varchar" MaxLength="100" />
+    <Property Name="Unit_Of_Measure_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Raw_Material_Written_Off">
+    <Key>
+      <PropertyRef Name="Raw_Material_Written_Off_ID" />
+    </Key>
+    <Property Name="Raw_Material_Written_Off_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Write_Off_Date" Type="date" />
+    <Property Name="Quantity" Type="decimal" Precision="14" Scale="6" />
+    <Property Name="Reason" Type="varchar" MaxLength="50" />
+    <Property Name="Raw_Material_ID" Type="int" />
+    <Property Name="User_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Relationship">
+    <Key>
+      <PropertyRef Name="Relationship_ID" />
+    </Key>
+    <Property Name="Relationship_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Relationship_Description" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Retail_Sale">
+    <Key>
+      <PropertyRef Name="Sale_ID" />
+    </Key>
+    <Property Name="Sale_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Payment_ID" Type="int" />
+    <Property Name="Discount" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="Order_Status_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Retail_Sale_Line">
+    <Key>
+      <PropertyRef Name="Retail_Sale_Line_ID" />
+    </Key>
+    <Property Name="Retail_Sale_Line_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sale_ID" Type="int" />
+    <Property Name="Stock_ID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+  </EntityType>
+  <EntityType Name="Special">
+    <Key>
+      <PropertyRef Name="Special_ID" />
+    </Key>
+    <Property Name="Special_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_ID" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="Begin_date" Type="date" />
+    <Property Name="End_Date" Type="date" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="Stock_ID" />
+    </Key>
+    <Property Name="Stock_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Stock_Description" Type="varchar" MaxLength="255" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Special" Type="bit" />
+    <Property Name="Quantity_Available" Type="int" />
+    <Property Name="Quantity_On_Hand" Type="int" />
+    <Property Name="Display_Image" Type="varbinary(max)" />
+    <Property Name="production_Time" Type="int" />
+    <Property Name="Unit_Of_Measure_ID" Type="int" />
+    <Property Name="Stock_Category_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stock_Category">
+    <Key>
+      <PropertyRef Name="Stock_Category_ID" />
+    </Key>
+    <Property Name="Stock_Category_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Display_Image" Type="varbinary(max)" />
+    <Property Name="Stock_Category_Description" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Stock_Written_Off">
+    <Key>
+      <PropertyRef Name="Stock_Written_Off_ID" />
+    </Key>
+    <Property Name="Stock_Written_Off_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Write_Off_Date" Type="date" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Reason" Type="varchar" MaxLength="50" />
+    <Property Name="Stock_ID" Type="int" />
+    <Property Name="User_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Supplier_ID" />
+    </Key>
+    <Property Name="Supplier_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Supplier_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="VAT_Number" Type="char" MaxLength="13" />
+    <Property Name="Registration_Number" Type="char" MaxLength="12" />
+    <Property Name="Contact_Person" Type="varchar" MaxLength="40" />
+    <Property Name="Contact_Number" Type="char" MaxLength="10" />
+    <Property Name="Supplier_Address" Type="varchar" MaxLength="255" />
+    <Property Name="Email_Address" Type="varchar" MaxLength="60" />
+    <Property Name="Note" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Unit_Conversion">
+    <Key>
+      <PropertyRef Name="Conversion_ID" />
+    </Key>
+    <Property Name="Conversion_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="From_Unit" Type="int" />
+    <Property Name="To_Unit" Type="int" />
+    <Property Name="Quantity" Type="decimal" Precision="14" Scale="6" />
+  </EntityType>
+  <EntityType Name="Unit_Of_Measure">
+    <Key>
+      <PropertyRef Name="Unit_Of_Measure_ID" />
+    </Key>
+    <Property Name="Unit_Of_Measure_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Unit_Of_Measure_Description" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="User_Type">
+    <Key>
+      <PropertyRef Name="User_Type_ID" />
+    </Key>
+    <Property Name="User_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Type_Description" Type="varchar" MaxLength="15" />
+    <Property Name="Raw_Material_Acess" Type="bit" />
+    <Property Name="Stock_Acess" Type="bit" />
+    <Property Name="Employee_Acess" Type="bit" />
+    <Property Name="Customer_Acess" Type="bit" />
+    <Property Name="Customer_Order_Acess" Type="bit" />
+    <Property Name="Delivery_Job_Acess" Type="bit" />
+    <Property Name="Supplier_Acess" Type="bit" />
+    <Property Name="Make_Sale_Acess" Type="bit" />
+    <Property Name="Administrator_Acess" Type="bit" />
+    <Property Name="Reporting_Acess" Type="bit" />
+  </EntityType>
+  <Association Name="FK__Associati__Payme__1F98B2C1">
+    <End Role="Payment" Type="Self.Payment" Multiplicity="1" />
+    <End Role="Associative_Payment" Type="Self.Associative_Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="Payment_ID" />
+      </Principal>
+      <Dependent Role="Associative_Payment">
+        <PropertyRef Name="Payment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Associati__Payme__208CD6FA">
+    <End Role="Payment_Type" Type="Self.Payment_Type" Multiplicity="1" />
+    <End Role="Associative_Payment" Type="Self.Associative_Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment_Type">
+        <PropertyRef Name="Payment_Type_ID" />
+      </Principal>
+      <Dependent Role="Associative_Payment">
+        <PropertyRef Name="Payment_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Audit_Cre__Audit__66603565">
+    <End Role="Audit_Log" Type="Self.Audit_Log" Multiplicity="0..1" />
+    <End Role="Audit_Create_Delete" Type="Self.Audit_Create_Delete" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Audit_Log">
+        <PropertyRef Name="Audit_Log_ID" />
+      </Principal>
+      <Dependent Role="Audit_Create_Delete">
+        <PropertyRef Name="Audit_Log_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Audit_Log__User___60A75C0F">
+    <End Role="iBean_User" Type="Self.iBean_User" Multiplicity="0..1" />
+    <End Role="Audit_Log" Type="Self.Audit_Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iBean_User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Audit_Log">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Audit_Upd__Audit__6383C8BA">
+    <End Role="Audit_Log" Type="Self.Audit_Log" Multiplicity="0..1" />
+    <End Role="Audit_Update" Type="Self.Audit_Update" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Audit_Log">
+        <PropertyRef Name="Audit_Log_ID" />
+      </Principal>
+      <Dependent Role="Audit_Update">
+        <PropertyRef Name="Audit_Log_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Baking_Sc__Stock__4D94879B">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
+    <End Role="Baking_Schedule" Type="Self.Baking_Schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Stock_ID" />
+      </Principal>
+      <Dependent Role="Baking_Schedule">
+        <PropertyRef Name="Stock_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer___Custo__0B91BA14">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Customer_Order" Type="Self.Customer_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="Customer_Order">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer___Order__0C85DE4D">
+    <End Role="Order_Status" Type="Self.Order_Status" Multiplicity="0..1" />
+    <End Role="Customer_Order" Type="Self.Customer_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Status">
+        <PropertyRef Name="Order_Status_ID" />
+      </Principal>
+      <Dependent Role="Customer_Order">
+        <PropertyRef Name="Order_Status_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer___Order__160F4887">
+    <End Role="Customer_Order" Type="Self.Customer_Order" Multiplicity="0..1" />
+    <End Role="Customer_Order_Line" Type="Self.Customer_Order_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_Order">
+        <PropertyRef Name="Order_ID" />
+      </Principal>
+      <Dependent Role="Customer_Order_Line">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer___Stock__17036CC0">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
+    <End Role="Customer_Order_Line" Type="Self.Customer_Order_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Stock_ID" />
+      </Principal>
+      <Dependent Role="Customer_Order_Line">
+        <PropertyRef Name="Stock_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer___User___0A9D95DB">
+    <End Role="iBean_User" Type="Self.iBean_User" Multiplicity="0..1" />
+    <End Role="Customer_Order" Type="Self.Customer_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iBean_User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Customer_Order">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer__Corpor__398D8EEE">
+    <End Role="Corporate_Customer" Type="Self.Corporate_Customer" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Corporate_Customer">
+        <PropertyRef Name="Corporate_Customer_ID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Corporate_Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer__Custom__3A81B327">
+    <End Role="Customer_Type" Type="Self.Customer_Type" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_Type">
+        <PropertyRef Name="Customer_Type_ID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Customer_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer__Market__3C69FB99">
+    <End Role="Marketing" Type="Self.Marketing" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marketing">
+        <PropertyRef Name="Marketing_ID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Marketing_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer__User_I__3B75D760">
+    <End Role="iBean_User" Type="Self.iBean_User" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iBean_User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Delivery___Deliv__114A936A">
+    <End Role="Delivery_Status" Type="Self.Delivery_Status" Multiplicity="0..1" />
+    <End Role="Delivery_Job" Type="Self.Delivery_Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Delivery_Status">
+        <PropertyRef Name="Delivery_Status_ID" />
+      </Principal>
+      <Dependent Role="Delivery_Job">
+        <PropertyRef Name="Delivery_Status_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Delivery___Order__1332DBDC">
+    <End Role="Customer_Order" Type="Self.Customer_Order" Multiplicity="0..1" />
+    <End Role="Delivery_Job" Type="Self.Delivery_Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_Order">
+        <PropertyRef Name="Order_ID" />
+      </Principal>
+      <Dependent Role="Delivery_Job">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Delivery___User___123EB7A3">
+    <End Role="iBean_User" Type="Self.iBean_User" Multiplicity="0..1" />
+    <End Role="Delivery_Job" Type="Self.Delivery_Job" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iBean_User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Delivery_Job">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Emergency__Emplo__30F848ED">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Emergency_Contact" Type="Self.Emergency_Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="Emergency_Contact">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Emergency__Relat__300424B4">
+    <End Role="Relationship" Type="Self.Relationship" Multiplicity="0..1" />
+    <End Role="Emergency_Contact" Type="Self.Emergency_Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Relationship">
+        <PropertyRef Name="Relationship_ID" />
+      </Principal>
+      <Dependent Role="Emergency_Contact">
+        <PropertyRef Name="Relationship_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employees__Emplo__2B3F6F97">
+    <End Role="Employee_Type" Type="Self.Employee_Type" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_Type">
+        <PropertyRef Name="Employee_Type_ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Employee_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employees__User___2A4B4B5E">
+    <End Role="iBean_User" Type="Self.iBean_User" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iBean_User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__iBean_Use__User___25869641">
+    <End Role="User_Type" Type="Self.User_Type" Multiplicity="0..1" />
+    <End Role="iBean_User" Type="Self.iBean_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Type">
+        <PropertyRef Name="User_Type_ID" />
+      </Principal>
+      <Dependent Role="iBean_User">
+        <PropertyRef Name="User_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ingredien__Raw_M__5CD6CB2B">
+    <End Role="Raw_Material" Type="Self.Raw_Material" Multiplicity="1" />
+    <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Raw_Material">
+        <PropertyRef Name="Raw_Material_ID" />
+      </Principal>
+      <Dependent Role="Ingredient">
+        <PropertyRef Name="Raw_Material_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ingredien__Stock__5DCAEF64">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+    <End Role="Ingredient" Type="Self.Ingredient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Stock_ID" />
+      </Principal>
+      <Dependent Role="Ingredient">
+        <PropertyRef Name="Stock_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Material___Raw_M__59063A47">
+    <End Role="Raw_Material" Type="Self.Raw_Material" Multiplicity="1" />
+    <End Role="Material_Supplied" Type="Self.Material_Supplied" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Raw_Material">
+        <PropertyRef Name="Raw_Material_ID" />
+      </Principal>
+      <Dependent Role="Material_Supplied">
+        <PropertyRef Name="Raw_Material_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Material___Suppl__59FA5E80">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="Material_Supplied" Type="Self.Material_Supplied" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Supplier_ID" />
+      </Principal>
+      <Dependent Role="Material_Supplied">
+        <PropertyRef Name="Supplier_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payment__Order_I__1BC821DD">
+    <End Role="Customer_Order" Type="Self.Customer_Order" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_Order">
+        <PropertyRef Name="Order_ID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payment__User_ID__1CBC4616">
+    <End Role="iBean_User" Type="Self.iBean_User" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iBean_User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Price_Ove__Stock__5070F446">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
+    <End Role="Price_Over_Time" Type="Self.Price_Over_Time" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Stock_ID" />
+      </Principal>
+      <Dependent Role="Price_Over_Time">
+        <PropertyRef Name="Stock_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchase___Back___7F2BE32F">
+    <End Role="Purchase_Back_Order" Type="Self.Purchase_Back_Order" Multiplicity="1" />
+    <End Role="Purchase_Back_Order_Line" Type="Self.Purchase_Back_Order_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase_Back_Order">
+        <PropertyRef Name="Back_Order_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Back_Order_Line">
+        <PropertyRef Name="Back_Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchase___Order__71D1E811">
+    <End Role="Order_Status" Type="Self.Order_Status" Multiplicity="0..1" />
+    <End Role="Purchase_Order" Type="Self.Purchase_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Status">
+        <PropertyRef Name="Order_Status_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Order">
+        <PropertyRef Name="Order_Status_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchase___Order__7B5B524B">
+    <End Role="Order_Status" Type="Self.Order_Status" Multiplicity="0..1" />
+    <End Role="Purchase_Back_Order" Type="Self.Purchase_Back_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Status">
+        <PropertyRef Name="Order_Status_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Back_Order">
+        <PropertyRef Name="Order_Status_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchase___Purch__75A278F5">
+    <End Role="Purchase_Order" Type="Self.Purchase_Order" Multiplicity="1" />
+    <End Role="Purchase_Order_Line" Type="Self.Purchase_Order_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase_Order">
+        <PropertyRef Name="Purchase_Order_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Order_Line">
+        <PropertyRef Name="Purchase_Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchase___Purch__797309D9">
+    <End Role="Purchase_Order" Type="Self.Purchase_Order" Multiplicity="0..1" />
+    <End Role="Purchase_Back_Order" Type="Self.Purchase_Back_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase_Order">
+        <PropertyRef Name="Purchase_Order_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Back_Order">
+        <PropertyRef Name="Purchase_Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchase___Raw_M__00200768">
+    <End Role="Raw_Material" Type="Self.Raw_Material" Multiplicity="1" />
+    <End Role="Purchase_Back_Order_Line" Type="Self.Purchase_Back_Order_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Raw_Material">
+        <PropertyRef Name="Raw_Material_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Back_Order_Line">
+        <PropertyRef Name="Raw_Material_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchase___Raw_M__76969D2E">
+    <End Role="Raw_Material" Type="Self.Raw_Material" Multiplicity="1" />
+    <End Role="Purchase_Order_Line" Type="Self.Purchase_Order_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Raw_Material">
+        <PropertyRef Name="Raw_Material_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Order_Line">
+        <PropertyRef Name="Raw_Material_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchase___Suppl__70DDC3D8">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="Purchase_Order" Type="Self.Purchase_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Supplier_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Order">
+        <PropertyRef Name="Supplier_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchase___Suppl__7A672E12">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="Purchase_Back_Order" Type="Self.Purchase_Back_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Supplier_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Back_Order">
+        <PropertyRef Name="Supplier_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchase___User___72C60C4A">
+    <End Role="iBean_User" Type="Self.iBean_User" Multiplicity="0..1" />
+    <End Role="Purchase_Order" Type="Self.Purchase_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iBean_User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Order">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchase___User___7C4F7684">
+    <End Role="iBean_User" Type="Self.iBean_User" Multiplicity="0..1" />
+    <End Role="Purchase_Back_Order" Type="Self.Purchase_Back_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iBean_User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Purchase_Back_Order">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Raw_Mater__Defua__5535A963">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="Raw_Material" Type="Self.Raw_Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Supplier_ID" />
+      </Principal>
+      <Dependent Role="Raw_Material">
+        <PropertyRef Name="Defualt_Supplier_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Raw_Mater__Raw_M__02FC7413">
+    <End Role="Raw_Material" Type="Self.Raw_Material" Multiplicity="0..1" />
+    <End Role="Raw_Material_Written_Off" Type="Self.Raw_Material_Written_Off" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Raw_Material">
+        <PropertyRef Name="Raw_Material_ID" />
+      </Principal>
+      <Dependent Role="Raw_Material_Written_Off">
+        <PropertyRef Name="Raw_Material_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Raw_Mater__Unit___5629CD9C">
+    <End Role="Unit_Of_Measure" Type="Self.Unit_Of_Measure" Multiplicity="1" />
+    <End Role="Raw_Material" Type="Self.Raw_Material" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit_Of_Measure">
+        <PropertyRef Name="Unit_Of_Measure_ID" />
+      </Principal>
+      <Dependent Role="Raw_Material">
+        <PropertyRef Name="Unit_Of_Measure_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Raw_Mater__User___03F0984C">
+    <End Role="iBean_User" Type="Self.iBean_User" Multiplicity="0..1" />
+    <End Role="Raw_Material_Written_Off" Type="Self.Raw_Material_Written_Off" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iBean_User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Raw_Material_Written_Off">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Retail_Sa__Order__245D67DE">
+    <End Role="Order_Status" Type="Self.Order_Status" Multiplicity="0..1" />
+    <End Role="Retail_Sale" Type="Self.Retail_Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Status">
+        <PropertyRef Name="Order_Status_ID" />
+      </Principal>
+      <Dependent Role="Retail_Sale">
+        <PropertyRef Name="Order_Status_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Retail_Sa__Payme__236943A5">
+    <End Role="Payment" Type="Self.Payment" Multiplicity="0..1" />
+    <End Role="Retail_Sale" Type="Self.Retail_Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="Payment_ID" />
+      </Principal>
+      <Dependent Role="Retail_Sale">
+        <PropertyRef Name="Payment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Retail_Sa__Sale___2739D489">
+    <End Role="Retail_Sale" Type="Self.Retail_Sale" Multiplicity="0..1" />
+    <End Role="Retail_Sale_Line" Type="Self.Retail_Sale_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Retail_Sale">
+        <PropertyRef Name="Sale_ID" />
+      </Principal>
+      <Dependent Role="Retail_Sale_Line">
+        <PropertyRef Name="Sale_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Retail_Sa__Stock__282DF8C2">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
+    <End Role="Retail_Sale_Line" Type="Self.Retail_Sale_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Stock_ID" />
+      </Principal>
+      <Dependent Role="Retail_Sale_Line">
+        <PropertyRef Name="Stock_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Special__Stock_I__4AB81AF0">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
+    <End Role="Special" Type="Self.Special" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Stock_ID" />
+      </Principal>
+      <Dependent Role="Special">
+        <PropertyRef Name="Stock_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock__Stock_Cat__47DBAE45">
+    <End Role="Stock_Category" Type="Self.Stock_Category" Multiplicity="1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock_Category">
+        <PropertyRef Name="Stock_Category_ID" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="Stock_Category_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock__Unit_Of_M__46E78A0C">
+    <End Role="Unit_Of_Measure" Type="Self.Unit_Of_Measure" Multiplicity="0..1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit_Of_Measure">
+        <PropertyRef Name="Unit_Of_Measure_ID" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="Unit_Of_Measure_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock_Wri__Stock__06CD04F7">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
+    <End Role="Stock_Written_Off" Type="Self.Stock_Written_Off" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Stock_ID" />
+      </Principal>
+      <Dependent Role="Stock_Written_Off">
+        <PropertyRef Name="Stock_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock_Wri__User___07C12930">
+    <End Role="iBean_User" Type="Self.iBean_User" Multiplicity="0..1" />
+    <End Role="Stock_Written_Off" Type="Self.Stock_Written_Off" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iBean_User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Stock_Written_Off">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Unit_Conv__From___412EB0B6">
+    <End Role="Unit_Of_Measure" Type="Self.Unit_Of_Measure" Multiplicity="0..1" />
+    <End Role="Unit_Conversion" Type="Self.Unit_Conversion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit_Of_Measure">
+        <PropertyRef Name="Unit_Of_Measure_ID" />
+      </Principal>
+      <Dependent Role="Unit_Conversion">
+        <PropertyRef Name="From_Unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Unit_Conv__To_Un__4222D4EF">
+    <End Role="Unit_Of_Measure" Type="Self.Unit_Of_Measure" Multiplicity="0..1" />
+    <End Role="Unit_Conversion" Type="Self.Unit_Conversion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit_Of_Measure">
+        <PropertyRef Name="Unit_Of_Measure_ID" />
+      </Principal>
+      <Dependent Role="Unit_Conversion">
+        <PropertyRef Name="To_Unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="iBeanModelStoreContainer">
+    <EntitySet Name="Associative_Payment" EntityType="Self.Associative_Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Audit_Create_Delete" EntityType="Self.Audit_Create_Delete" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Audit_Log" EntityType="Self.Audit_Log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Audit_Update" EntityType="Self.Audit_Update" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Baking_Schedule" EntityType="Self.Baking_Schedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bussiness_Trading_Hours" EntityType="Self.Bussiness_Trading_Hours" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company_Information" EntityType="Self.Company_Information" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Corporate_Customer" EntityType="Self.Corporate_Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_Order" EntityType="Self.Customer_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_Order_Line" EntityType="Self.Customer_Order_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_Type" EntityType="Self.Customer_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Delivery_Job" EntityType="Self.Delivery_Job" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Delivery_Status" EntityType="Self.Delivery_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Emergency_Contact" EntityType="Self.Emergency_Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee_Type" EntityType="Self.Employee_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="iBean_User" EntityType="Self.iBean_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ingredient" EntityType="Self.Ingredient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marketing" EntityType="Self.Marketing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marketing_Template" EntityType="Self.Marketing_Template" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Material_Supplied" EntityType="Self.Material_Supplied" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order_Status" EntityType="Self.Order_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment_Type" EntityType="Self.Payment_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Price_Over_Time" EntityType="Self.Price_Over_Time" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchase_Back_Order" EntityType="Self.Purchase_Back_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchase_Back_Order_Line" EntityType="Self.Purchase_Back_Order_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchase_Order" EntityType="Self.Purchase_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchase_Order_Line" EntityType="Self.Purchase_Order_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Raw_Material" EntityType="Self.Raw_Material" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Raw_Material_Written_Off" EntityType="Self.Raw_Material_Written_Off" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Relationship" EntityType="Self.Relationship" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Retail_Sale" EntityType="Self.Retail_Sale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Retail_Sale_Line" EntityType="Self.Retail_Sale_Line" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Special" EntityType="Self.Special" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stock" EntityType="Self.Stock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stock_Category" EntityType="Self.Stock_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stock_Written_Off" EntityType="Self.Stock_Written_Off" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit_Conversion" EntityType="Self.Unit_Conversion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit_Of_Measure" EntityType="Self.Unit_Of_Measure" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Type" EntityType="Self.User_Type" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Associati__Payme__1F98B2C1" Association="Self.FK__Associati__Payme__1F98B2C1">
+      <End Role="Payment" EntitySet="Payment" />
+      <End Role="Associative_Payment" EntitySet="Associative_Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Associati__Payme__208CD6FA" Association="Self.FK__Associati__Payme__208CD6FA">
+      <End Role="Payment_Type" EntitySet="Payment_Type" />
+      <End Role="Associative_Payment" EntitySet="Associative_Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Audit_Cre__Audit__66603565" Association="Self.FK__Audit_Cre__Audit__66603565">
+      <End Role="Audit_Log" EntitySet="Audit_Log" />
+      <End Role="Audit_Create_Delete" EntitySet="Audit_Create_Delete" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Audit_Log__User___60A75C0F" Association="Self.FK__Audit_Log__User___60A75C0F">
+      <End Role="iBean_User" EntitySet="iBean_User" />
+      <End Role="Audit_Log" EntitySet="Audit_Log" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Audit_Upd__Audit__6383C8BA" Association="Self.FK__Audit_Upd__Audit__6383C8BA">
+      <End Role="Audit_Log" EntitySet="Audit_Log" />
+      <End Role="Audit_Update" EntitySet="Audit_Update" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Baking_Sc__Stock__4D94879B" Association="Self.FK__Baking_Sc__Stock__4D94879B">
+      <End Role="Stock" EntitySet="Stock" />
+      <End Role="Baking_Schedule" EntitySet="Baking_Schedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer___Custo__0B91BA14" Association="Self.FK__Customer___Custo__0B91BA14">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Customer_Order" EntitySet="Customer_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer___Order__0C85DE4D" Association="Self.FK__Customer___Order__0C85DE4D">
+      <End Role="Order_Status" EntitySet="Order_Status" />
+      <End Role="Customer_Order" EntitySet="Customer_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer___Order__160F4887" Association="Self.FK__Customer___Order__160F4887">
+      <End Role="Customer_Order" EntitySet="Customer_Order" />
+      <End Role="Customer_Order_Line" EntitySet="Customer_Order_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer___Stock__17036CC0" Association="Self.FK__Customer___Stock__17036CC0">
+      <End Role="Stock" EntitySet="Stock" />
+      <End Role="Customer_Order_Line" EntitySet="Customer_Order_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer___User___0A9D95DB" Association="Self.FK__Customer___User___0A9D95DB">
+      <End Role="iBean_User" EntitySet="iBean_User" />
+      <End Role="Customer_Order" EntitySet="Customer_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer__Corpor__398D8EEE" Association="Self.FK__Customer__Corpor__398D8EEE">
+      <End Role="Corporate_Customer" EntitySet="Corporate_Customer" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer__Custom__3A81B327" Association="Self.FK__Customer__Custom__3A81B327">
+      <End Role="Customer_Type" EntitySet="Customer_Type" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer__Market__3C69FB99" Association="Self.FK__Customer__Market__3C69FB99">
+      <End Role="Marketing" EntitySet="Marketing" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer__User_I__3B75D760" Association="Self.FK__Customer__User_I__3B75D760">
+      <End Role="iBean_User" EntitySet="iBean_User" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Delivery___Deliv__114A936A" Association="Self.FK__Delivery___Deliv__114A936A">
+      <End Role="Delivery_Status" EntitySet="Delivery_Status" />
+      <End Role="Delivery_Job" EntitySet="Delivery_Job" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Delivery___Order__1332DBDC" Association="Self.FK__Delivery___Order__1332DBDC">
+      <End Role="Customer_Order" EntitySet="Customer_Order" />
+      <End Role="Delivery_Job" EntitySet="Delivery_Job" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Delivery___User___123EB7A3" Association="Self.FK__Delivery___User___123EB7A3">
+      <End Role="iBean_User" EntitySet="iBean_User" />
+      <End Role="Delivery_Job" EntitySet="Delivery_Job" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Emergency__Emplo__30F848ED" Association="Self.FK__Emergency__Emplo__30F848ED">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Emergency_Contact" EntitySet="Emergency_Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Emergency__Relat__300424B4" Association="Self.FK__Emergency__Relat__300424B4">
+      <End Role="Relationship" EntitySet="Relationship" />
+      <End Role="Emergency_Contact" EntitySet="Emergency_Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employees__Emplo__2B3F6F97" Association="Self.FK__Employees__Emplo__2B3F6F97">
+      <End Role="Employee_Type" EntitySet="Employee_Type" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employees__User___2A4B4B5E" Association="Self.FK__Employees__User___2A4B4B5E">
+      <End Role="iBean_User" EntitySet="iBean_User" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__iBean_Use__User___25869641" Association="Self.FK__iBean_Use__User___25869641">
+      <End Role="User_Type" EntitySet="User_Type" />
+      <End Role="iBean_User" EntitySet="iBean_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ingredien__Raw_M__5CD6CB2B" Association="Self.FK__Ingredien__Raw_M__5CD6CB2B">
+      <End Role="Raw_Material" EntitySet="Raw_Material" />
+      <End Role="Ingredient" EntitySet="Ingredient" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ingredien__Stock__5DCAEF64" Association="Self.FK__Ingredien__Stock__5DCAEF64">
+      <End Role="Stock" EntitySet="Stock" />
+      <End Role="Ingredient" EntitySet="Ingredient" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Material___Raw_M__59063A47" Association="Self.FK__Material___Raw_M__59063A47">
+      <End Role="Raw_Material" EntitySet="Raw_Material" />
+      <End Role="Material_Supplied" EntitySet="Material_Supplied" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Material___Suppl__59FA5E80" Association="Self.FK__Material___Suppl__59FA5E80">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Material_Supplied" EntitySet="Material_Supplied" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payment__Order_I__1BC821DD" Association="Self.FK__Payment__Order_I__1BC821DD">
+      <End Role="Customer_Order" EntitySet="Customer_Order" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payment__User_ID__1CBC4616" Association="Self.FK__Payment__User_ID__1CBC4616">
+      <End Role="iBean_User" EntitySet="iBean_User" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Price_Ove__Stock__5070F446" Association="Self.FK__Price_Ove__Stock__5070F446">
+      <End Role="Stock" EntitySet="Stock" />
+      <End Role="Price_Over_Time" EntitySet="Price_Over_Time" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchase___Back___7F2BE32F" Association="Self.FK__Purchase___Back___7F2BE32F">
+      <End Role="Purchase_Back_Order" EntitySet="Purchase_Back_Order" />
+      <End Role="Purchase_Back_Order_Line" EntitySet="Purchase_Back_Order_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchase___Order__71D1E811" Association="Self.FK__Purchase___Order__71D1E811">
+      <End Role="Order_Status" EntitySet="Order_Status" />
+      <End Role="Purchase_Order" EntitySet="Purchase_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchase___Order__7B5B524B" Association="Self.FK__Purchase___Order__7B5B524B">
+      <End Role="Order_Status" EntitySet="Order_Status" />
+      <End Role="Purchase_Back_Order" EntitySet="Purchase_Back_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchase___Purch__75A278F5" Association="Self.FK__Purchase___Purch__75A278F5">
+      <End Role="Purchase_Order" EntitySet="Purchase_Order" />
+      <End Role="Purchase_Order_Line" EntitySet="Purchase_Order_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchase___Purch__797309D9" Association="Self.FK__Purchase___Purch__797309D9">
+      <End Role="Purchase_Order" EntitySet="Purchase_Order" />
+      <End Role="Purchase_Back_Order" EntitySet="Purchase_Back_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchase___Raw_M__00200768" Association="Self.FK__Purchase___Raw_M__00200768">
+      <End Role="Raw_Material" EntitySet="Raw_Material" />
+      <End Role="Purchase_Back_Order_Line" EntitySet="Purchase_Back_Order_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchase___Raw_M__76969D2E" Association="Self.FK__Purchase___Raw_M__76969D2E">
+      <End Role="Raw_Material" EntitySet="Raw_Material" />
+      <End Role="Purchase_Order_Line" EntitySet="Purchase_Order_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchase___Suppl__70DDC3D8" Association="Self.FK__Purchase___Suppl__70DDC3D8">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Purchase_Order" EntitySet="Purchase_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchase___Suppl__7A672E12" Association="Self.FK__Purchase___Suppl__7A672E12">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Purchase_Back_Order" EntitySet="Purchase_Back_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchase___User___72C60C4A" Association="Self.FK__Purchase___User___72C60C4A">
+      <End Role="iBean_User" EntitySet="iBean_User" />
+      <End Role="Purchase_Order" EntitySet="Purchase_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchase___User___7C4F7684" Association="Self.FK__Purchase___User___7C4F7684">
+      <End Role="iBean_User" EntitySet="iBean_User" />
+      <End Role="Purchase_Back_Order" EntitySet="Purchase_Back_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Raw_Mater__Defua__5535A963" Association="Self.FK__Raw_Mater__Defua__5535A963">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Raw_Material" EntitySet="Raw_Material" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Raw_Mater__Raw_M__02FC7413" Association="Self.FK__Raw_Mater__Raw_M__02FC7413">
+      <End Role="Raw_Material" EntitySet="Raw_Material" />
+      <End Role="Raw_Material_Written_Off" EntitySet="Raw_Material_Written_Off" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Raw_Mater__Unit___5629CD9C" Association="Self.FK__Raw_Mater__Unit___5629CD9C">
+      <End Role="Unit_Of_Measure" EntitySet="Unit_Of_Measure" />
+      <End Role="Raw_Material" EntitySet="Raw_Material" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Raw_Mater__User___03F0984C" Association="Self.FK__Raw_Mater__User___03F0984C">
+      <End Role="iBean_User" EntitySet="iBean_User" />
+      <End Role="Raw_Material_Written_Off" EntitySet="Raw_Material_Written_Off" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Retail_Sa__Order__245D67DE" Association="Self.FK__Retail_Sa__Order__245D67DE">
+      <End Role="Order_Status" EntitySet="Order_Status" />
+      <End Role="Retail_Sale" EntitySet="Retail_Sale" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Retail_Sa__Payme__236943A5" Association="Self.FK__Retail_Sa__Payme__236943A5">
+      <End Role="Payment" EntitySet="Payment" />
+      <End Role="Retail_Sale" EntitySet="Retail_Sale" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Retail_Sa__Sale___2739D489" Association="Self.FK__Retail_Sa__Sale___2739D489">
+      <End Role="Retail_Sale" EntitySet="Retail_Sale" />
+      <End Role="Retail_Sale_Line" EntitySet="Retail_Sale_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Retail_Sa__Stock__282DF8C2" Association="Self.FK__Retail_Sa__Stock__282DF8C2">
+      <End Role="Stock" EntitySet="Stock" />
+      <End Role="Retail_Sale_Line" EntitySet="Retail_Sale_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Special__Stock_I__4AB81AF0" Association="Self.FK__Special__Stock_I__4AB81AF0">
+      <End Role="Stock" EntitySet="Stock" />
+      <End Role="Special" EntitySet="Special" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock__Stock_Cat__47DBAE45" Association="Self.FK__Stock__Stock_Cat__47DBAE45">
+      <End Role="Stock_Category" EntitySet="Stock_Category" />
+      <End Role="Stock" EntitySet="Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock__Unit_Of_M__46E78A0C" Association="Self.FK__Stock__Unit_Of_M__46E78A0C">
+      <End Role="Unit_Of_Measure" EntitySet="Unit_Of_Measure" />
+      <End Role="Stock" EntitySet="Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock_Wri__Stock__06CD04F7" Association="Self.FK__Stock_Wri__Stock__06CD04F7">
+      <End Role="Stock" EntitySet="Stock" />
+      <End Role="Stock_Written_Off" EntitySet="Stock_Written_Off" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock_Wri__User___07C12930" Association="Self.FK__Stock_Wri__User___07C12930">
+      <End Role="iBean_User" EntitySet="iBean_User" />
+      <End Role="Stock_Written_Off" EntitySet="Stock_Written_Off" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Unit_Conv__From___412EB0B6" Association="Self.FK__Unit_Conv__From___412EB0B6">
+      <End Role="Unit_Of_Measure" EntitySet="Unit_Of_Measure" />
+      <End Role="Unit_Conversion" EntitySet="Unit_Conversion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Unit_Conv__To_Un__4222D4EF" Association="Self.FK__Unit_Conv__To_Un__4222D4EF">
+      <End Role="Unit_Of_Measure" EntitySet="Unit_Of_Measure" />
+      <End Role="Unit_Conversion" EntitySet="Unit_Conversion" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

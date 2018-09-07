@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.SalesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SalesReportDs = new DesktopApp.SalesReportDs();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -39,14 +41,22 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.SalesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.SalesReportDs = new DesktopApp.SalesReportDs();
             this.SalesTableAdapter = new DesktopApp.SalesReportDsTableAdapters.SalesTableAdapter();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SalesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesReportDs)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // SalesBindingSource
+            // 
+            this.SalesBindingSource.DataMember = "Sales";
+            this.SalesBindingSource.DataSource = this.SalesReportDs;
+            // 
+            // SalesReportDs
+            // 
+            this.SalesReportDs.DataSetName = "SalesReportDs";
+            this.SalesReportDs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -117,9 +127,9 @@
             reportDataSource1.Value = this.SalesBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "DesktopApp.rptSale.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(20, 40);
+            this.reportViewer1.Location = new System.Drawing.Point(20, 34);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(767, 196);
+            this.reportViewer1.Size = new System.Drawing.Size(767, 202);
             this.reportViewer1.TabIndex = 24;
             // 
             // groupBox1
@@ -127,9 +137,9 @@
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.reportViewer1);
             this.groupBox1.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(51, 169);
+            this.groupBox1.Location = new System.Drawing.Point(51, 152);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(814, 269);
+            this.groupBox1.Size = new System.Drawing.Size(814, 286);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sales Report";
@@ -149,16 +159,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Date Range Of Report";
             // 
-            // SalesBindingSource
-            // 
-            this.SalesBindingSource.DataMember = "Sales";
-            this.SalesBindingSource.DataSource = this.SalesReportDs;
-            // 
-            // SalesReportDs
-            // 
-            this.SalesReportDs.DataSetName = "SalesReportDs";
-            this.SalesReportDs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // SalesTableAdapter
             // 
             this.SalesTableAdapter.ClearBeforeFill = true;
@@ -173,11 +173,11 @@
             this.Name = "UCSalesReport";
             this.Size = new System.Drawing.Size(888, 483);
             this.Load += new System.EventHandler(this.UCSalesReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.SalesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesReportDs)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SalesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SalesReportDs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

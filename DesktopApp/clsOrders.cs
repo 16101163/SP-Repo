@@ -9,7 +9,7 @@ namespace DesktopApp
     public class Orders
     {
         public int OrderID { get; set; }
-        public string CustomerID { get; set; }
+        public string clientID { get; set; }
         public string ContactName { get; set; }
         public string Address { get; set; }
         public string PostalCode { get; set; }

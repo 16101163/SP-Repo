@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.OutstandingDelDs = new DesktopApp.OutstandingDelDs();
+           // this.OutstandingDelDs = new DesktopApp.OutstandingDelDs();
             this.Outstanding_DelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Outstanding_DelTableAdapter = new DesktopApp.OutstandingDelDsTableAdapters.Outstanding_DelTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.OutstandingDelDs)).BeginInit();
+           // this.Outstanding_DelTableAdapter = new DesktopApp.OutstandingDelDsTableAdapters.Outstanding_DelTableAdapter();
+           // ((System.ComponentModel.ISupportInitialize)(this.OutstandingDelDs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Outstanding_DelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,17 +51,17 @@
             // 
             // OutstandingDelDs
             // 
-            this.OutstandingDelDs.DataSetName = "OutstandingDelDs";
-            this.OutstandingDelDs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+          //  this.OutstandingDelDs.DataSetName = "OutstandingDelDs";
+          //  this.OutstandingDelDs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Outstanding_DelBindingSource
             // 
             this.Outstanding_DelBindingSource.DataMember = "Outstanding_Del";
-            this.Outstanding_DelBindingSource.DataSource = this.OutstandingDelDs;
-            // 
+           // this.Outstanding_DelBindingSource.DataSource = this.OutstandingDelDs;
+            //// 
             // Outstanding_DelTableAdapter
             // 
-            this.Outstanding_DelTableAdapter.ClearBeforeFill = true;
+            //this.Outstanding_DelTableAdapter.ClearBeforeFill = true;
             // 
             // Test
             // 
@@ -72,7 +72,7 @@
             this.Name = "Test";
             this.Text = "Test";
             this.Load += new System.EventHandler(this.Test_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.OutstandingDelDs)).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.OutstandingDelDs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Outstanding_DelBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -82,7 +82,7 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource Outstanding_DelBindingSource;
-        private OutstandingDelDs OutstandingDelDs;
-        private OutstandingDelDsTableAdapters.Outstanding_DelTableAdapter Outstanding_DelTableAdapter;
+      //  private OutstandingDelDs OutstandingDelDs;
+     //   private OutstandingDelDsTableAdapters.Outstanding_DelTableAdapter Outstanding_DelTableAdapter;
     }
 }

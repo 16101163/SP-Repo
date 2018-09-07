@@ -26,9 +26,9 @@ namespace DesktopApp
         {
 
             MessageBox.Show("Please fill in all required fields");
-            MessageBox.Show("Are you sure you want to Make ?", "confirmation", MessageBoxButtons.YesNo);
-            MessageBox.Show("Purchase order has been placed successfully");
-            MessageBox.Show("Order Total exceeds client credit limit");
+            MessageBox.Show("Sale has been successfully Added");
+            MessageBox.Show("Sale exceeded R1000");
+
         }
     }
 }

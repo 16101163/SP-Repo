@@ -69,6 +69,14 @@
       <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -85,9 +93,12 @@
       <HintPath>..\SmartPac v1.1\bin\SmartPac v1.1.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -110,19 +121,144 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Audit_Create_Report.cs">
+    <Compile Include="Access_Level.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Audit_Create_Delete.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Audit_Delete_Crystal_Report.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Audit_Create_Report.rpt</DependentUpon>
+      <DependentUpon>Audit_Delete_Crystal_Report.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Audit_Log.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Audit_Update.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Audit_Update_Crystal_Rprt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Audit_Update_Crystal_Rprt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Backorder_Line.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Backorder_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client_Account_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client_Purchase_Order.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Client_Purchase_Order_Line.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
     <Compile Include="clsOrders.cs" />
-    <Compile Include="Encryption.cs" />
+    <Compile Include="clsUser.cs" />
+    <Compile Include="Audit_Create_Cryst_Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Audit_Create_Cryst_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Company_Information.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credit_Approval.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credit_Authorization.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credit_Return.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credit_Return_Line.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Credit_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dispatch.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dispatch_Type.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DsEmployeeReport.cs">
+      <DependentUpon>DsEmployeeReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DsEmployeeReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsEmployeeReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Email_Notice_Template.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Logsheet.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Type.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddClient.Designer.cs">
+      <DependentUpon>frmAddClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddNotification.Designer.cs">
+      <DependentUpon>frmAddNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddProductType.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAddProductType.Designer.cs">
       <DependentUpon>frmAddProductType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuditCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuditCreate.Designer.cs">
+      <DependentUpon>frmAuditCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuditDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuditDelete.Designer.cs">
+      <DependentUpon>frmAuditDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuditReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuditReports.Designer.cs">
+      <DependentUpon>frmAuditReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAuditUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAuditUpdate.Designer.cs">
+      <DependentUpon>frmAuditUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAutherization.cs">
       <SubType>Form</SubType>
@@ -130,11 +266,23 @@
     <Compile Include="frmAutherization.Designer.cs">
       <DependentUpon>frmAutherization.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClient.Designer.cs">
+      <DependentUpon>frmClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientOrders.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmClientOrders.Designer.cs">
       <DependentUpon>frmClientOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompanyInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompanyInformation.Designer.cs">
+      <DependentUpon>frmCompanyInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInvoice.cs">
       <SubType>Form</SubType>
@@ -142,17 +290,71 @@
     <Compile Include="frmInvoice.Designer.cs">
       <DependentUpon>frmInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMaintainClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaintainClients.Designer.cs">
+      <DependentUpon>frmMaintainClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaintainNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaintainNotification.Designer.cs">
+      <DependentUpon>frmMaintainNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMaintainProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMaintainProduct.Designer.cs">
       <DependentUpon>frmMaintainProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNotification.Designer.cs">
+      <DependentUpon>frmNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOustandingDeli_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOustandingDeli_1.Designer.cs">
+      <DependentUpon>frmOustandingDeli_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOutstDelrpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOutstDelrpt.Designer.cs">
+      <DependentUpon>frmOutstDelrpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPublish.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPublish.Designer.cs">
+      <DependentUpon>frmPublish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmResetPasswrd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmResetPasswrd.Designer.cs">
       <DependentUpon>frmResetPasswrd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalesReport.Designer.cs">
+      <DependentUpon>frmSalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalesReportDatePick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalesReportDatePick.Designer.cs">
+      <DependentUpon>frmSalesReportDatePick.cs</DependentUpon>
     </Compile>
     <Compile Include="frmScanQR.cs">
       <SubType>Form</SubType>
@@ -173,10 +375,51 @@
       <DependentUpon>frmUserLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="clsOrderDetail.cs" />
-    <Compile Include="OutstandingDelDs.Designer.cs">
+    <Compile Include="Globals.cs" />
+    <Compile Include="LopacTissues.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OutstandingDelDs.xsd</DependentUpon>
+      <DependentUpon>LopacTissues.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LopacTissues.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LopacTissues.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LopacTissues.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LopacTissues.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Notice_Template.cs">
+      <DependentUpon>LopacTissues.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Unit_Price.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Unit_Price_Log.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Outstanding_Del_Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Outstanding_Del_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Pack_Size.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Payment_Term.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="pLength.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ply.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductsReports.cs">
       <AutoGen>True</AutoGen>
@@ -184,18 +427,101 @@
       <DependentUpon>ProductsReports.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Product_Brand.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Image.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_Type.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Province.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase_Order_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reason_For_Return.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Refund_Line.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rpt_Sales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_Sales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sale.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
     <Compile Include="SalesReportDs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SalesReportDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sales_Order_line.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sales_Unit_Price.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sales_Unit_Price_log.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sale_Refund.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sheet.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SP.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SP.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SPDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SPDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Backorder.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Order.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Order_Line.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier_Order_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="Test.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Title.cs">
+      <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="UCAddAccessLevel.cs">
       <SubType>UserControl</SubType>
@@ -305,11 +631,11 @@
     <Compile Include="UCMaintainProduct.Designer.cs">
       <DependentUpon>UCMaintainProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCMaintainTemplateFields.cs">
+    <Compile Include="UCSearchTemplate.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCMaintainTemplateFields.Designer.cs">
-      <DependentUpon>UCMaintainTemplateFields.cs</DependentUpon>
+    <Compile Include="UCSearchTemplate.Designer.cs">
+      <DependentUpon>UCSearchTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="UCMaintainUser.cs">
       <SubType>UserControl</SubType>
@@ -322,6 +648,12 @@
     </Compile>
     <Compile Include="UCMaintainVehicle.Designer.cs">
       <DependentUpon>UCMaintainVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCMaintainTemp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMaintainTemp.Designer.cs">
+      <DependentUpon>UCMaintainTemp.cs</DependentUpon>
     </Compile>
     <Compile Include="UCNotification1.cs">
       <SubType>UserControl</SubType>
@@ -437,12 +769,6 @@
     <Compile Include="UCOrder\UCPackageOrder.Designer.cs">
       <DependentUpon>UCPackageOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCPublicTemplate.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCPublicTemplate.Designer.cs">
-      <DependentUpon>UCPublicTemplate.cs</DependentUpon>
-    </Compile>
     <Compile Include="UCOrder\UCPurchaseOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -509,11 +835,11 @@
     <Compile Include="UCUpdateCompanyInfo.Designer.cs">
       <DependentUpon>UCUpdateCompanyInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCAddUser.cs">
+    <Compile Include="UCRegisterUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCAddUser.Designer.cs">
-      <DependentUpon>UCAddUser.cs</DependentUpon>
+    <Compile Include="UCRegisterUser.Designer.cs">
+      <DependentUpon>UCRegisterUser.cs</DependentUpon>
     </Compile>
     <Compile Include="UCUserAccessLevel.cs">
       <SubType>UserControl</SubType>
@@ -539,27 +865,99 @@
     <Compile Include="UCViewOrders.Designer.cs">
       <DependentUpon>UCViewOrders.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Audit_Create_Report.rpt">
+    <Compile Include="User.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Width.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Audit_Create_Cryst_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Audit_Create_Report.cs</LastGenOutput>
+      <LastGenOutput>Audit_Create_Cryst_Report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audit_Delete_Crystal_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Audit_Delete_Crystal_Report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Audit_Update_Crystal_Rprt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Audit_Update_Crystal_Rprt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddClient.resx">
+      <DependentUpon>frmAddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddNotification.resx">
+      <DependentUpon>frmAddNotification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddProductType.resx">
       <DependentUpon>frmAddProductType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAuditCreate.resx">
+      <DependentUpon>frmAuditCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuditDelete.resx">
+      <DependentUpon>frmAuditDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuditReports.resx">
+      <DependentUpon>frmAuditReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAuditUpdate.resx">
+      <DependentUpon>frmAuditUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAutherization.resx">
       <DependentUpon>frmAutherization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClient.resx">
+      <DependentUpon>frmClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientOrders.resx">
       <DependentUpon>frmClientOrders.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCompanyInformation.resx">
+      <DependentUpon>frmCompanyInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInvoice.resx">
       <DependentUpon>frmInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaintainClients.resx">
+      <DependentUpon>frmMaintainClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaintainNotification.resx">
+      <DependentUpon>frmMaintainNotification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaintainProduct.resx">
       <DependentUpon>frmMaintainProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNotification.resx">
+      <DependentUpon>frmNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOustandingDeli_1.resx">
+      <DependentUpon>frmOustandingDeli_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOutstDelrpt.resx">
+      <DependentUpon>frmOutstDelrpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPublish.resx">
+      <DependentUpon>frmPublish.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmResetPasswrd.resx">
       <DependentUpon>frmResetPasswrd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesReport.resx">
+      <DependentUpon>frmSalesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesReportDatePick.resx">
+      <DependentUpon>frmSalesReportDatePick.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmScanQR.resx">
       <DependentUpon>frmScanQR.cs</DependentUpon>
@@ -569,6 +967,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserLogin.resx">
       <DependentUpon>frmUserLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outstanding_Del_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Outstanding_Del_Report.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductsReports.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -584,10 +986,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="EmployeeReport.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="rptSale.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
     <EmbeddedResource Include="rptInvoice.rdlc" />
     <EmbeddedResource Include="rptClientOrders.rdlc" />
+    <EmbeddedResource Include="Rpt_Sales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_Sales.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
@@ -645,14 +1053,17 @@
     <EmbeddedResource Include="UCMaintainProduct.resx">
       <DependentUpon>UCMaintainProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCMaintainTemplateFields.resx">
-      <DependentUpon>UCMaintainTemplateFields.cs</DependentUpon>
+    <EmbeddedResource Include="UCSearchTemplate.resx">
+      <DependentUpon>UCSearchTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCMaintainUser.resx">
       <DependentUpon>UCMaintainUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCMaintainVehicle.resx">
       <DependentUpon>UCMaintainVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMaintainTemp.resx">
+      <DependentUpon>UCMaintainTemp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCNotification1.resx">
       <DependentUpon>UCNotification1.cs</DependentUpon>
@@ -711,9 +1122,6 @@
     <EmbeddedResource Include="UCOrder\UCPackageOrder.resx">
       <DependentUpon>UCPackageOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCPublicTemplate.resx">
-      <DependentUpon>UCPublicTemplate.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UCOrder\UCPurchaseOrder.resx">
       <DependentUpon>UCPurchaseOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -747,8 +1155,8 @@
     <EmbeddedResource Include="UCUpdateCompanyInfo.resx">
       <DependentUpon>UCUpdateCompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCAddUser.resx">
-      <DependentUpon>UCAddUser.cs</DependentUpon>
+    <EmbeddedResource Include="UCRegisterUser.resx">
+      <DependentUpon>UCRegisterUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCUserAccessLevel.resx">
       <DependentUpon>UCUserAccessLevel.cs</DependentUpon>
@@ -765,21 +1173,35 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="OutstandingDelDs.xsc">
-      <DependentUpon>OutstandingDelDs.xsd</DependentUpon>
+    <None Include="DsEmployeeReport.xsc">
+      <DependentUpon>DsEmployeeReport.xsd</DependentUpon>
     </None>
-    <None Include="OutstandingDelDs.xsd">
+    <None Include="DsEmployeeReport.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>OutstandingDelDs.Designer.cs</LastGenOutput>
+      <LastGenOutput>DsEmployeeReport.Designer.cs</LastGenOutput>
     </None>
-    <None Include="OutstandingDelDs.xss">
-      <DependentUpon>OutstandingDelDs.xsd</DependentUpon>
+    <None Include="DsEmployeeReport.xss">
+      <DependentUpon>DsEmployeeReport.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="LopacTissues.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LopacTissues.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="LopacTissues.edmx.diagram">
+      <DependentUpon>LopacTissues.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\City.datasource" />
+    <None Include="Properties\DataSources\Client.datasource" />
+    <None Include="Properties\DataSources\Client_Account_Status.datasource" />
+    <None Include="Properties\DataSources\Credit_Status.datasource" />
+    <None Include="Properties\DataSources\Customer.datasource" />
     <None Include="Properties\DataSources\OrderDetail.datasource" />
     <None Include="Properties\DataSources\Orders.datasource" />
+    <None Include="Properties\DataSources\Province.datasource" />
     <None Include="Properties\DataSources\smartpac_reportsDataSet.datasource" />
+    <None Include="Properties\DataSources\User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -802,6 +1224,24 @@
     <None Include="SalesReportDs.xss">
       <DependentUpon>SalesReportDs.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="SP.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SP.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SP.edmx.diagram">
+      <DependentUpon>SP.edmx</DependentUpon>
+    </None>
+    <None Include="SPDataSet.xsc">
+      <DependentUpon>SPDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SPDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SPDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SPDataSet.xss">
+      <DependentUpon>SPDataSet.xsd</DependentUpon>
+    </None>
     <None Include="UCOrder\App.config" />
   </ItemGroup>
   <ItemGroup>
@@ -823,9 +1263,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="dbEmployeeReport.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dbEmployeeReport_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>dbEmployeeReport.mdf</DependentUpon>
+    </Content>
     <Content Include="DbOutstandingDel.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -839,6 +1287,26 @@
     <Content Include="DbSalesReport_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DbSalesReport.mdf</DependentUpon>
+    </Content>
+    <Content Include="LopacTissues.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LopacTissues.edmx</DependentUpon>
+      <LastGenOutput>LopacTissues.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="LopacTissues.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LopacTissues.edmx</DependentUpon>
+      <LastGenOutput>LopacTissues.cs</LastGenOutput>
+    </Content>
+    <Content Include="SP.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SP.edmx</DependentUpon>
+      <LastGenOutput>SP.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SP.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SP.edmx</DependentUpon>
+      <LastGenOutput>SP.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

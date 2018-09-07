@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="iBeanModelStoreContainer" CdmEntityContainer="iBeanEntities">
+    <EntitySetMapping Name="Associative_Payment">
+      <EntityTypeMapping TypeName="iBeanModel.Associative_Payment">
+        <MappingFragment StoreEntitySet="Associative_Payment">
+          <ScalarProperty Name="Payment_ID" ColumnName="Payment_ID" />
+          <ScalarProperty Name="Payment_Type_ID" ColumnName="Payment_Type_ID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audit_Create_Delete">
+      <EntityTypeMapping TypeName="iBeanModel.Audit_Create_Delete">
+        <MappingFragment StoreEntitySet="Audit_Create_Delete">
+          <ScalarProperty Name="Audit_Create_Delete_ID" ColumnName="Audit_Create_Delete_ID" />
+          <ScalarProperty Name="PK_Row_Effected" ColumnName="PK_Row_Effected" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Audit_Log_ID" ColumnName="Audit_Log_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audit_Log">
+      <EntityTypeMapping TypeName="iBeanModel.Audit_Log">
+        <MappingFragment StoreEntitySet="Audit_Log">
+          <ScalarProperty Name="Audit_Log_ID" ColumnName="Audit_Log_ID" />
+          <ScalarProperty Name="Table_Name" ColumnName="Table_Name" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audit_Update">
+      <EntityTypeMapping TypeName="iBeanModel.Audit_Update">
+        <MappingFragment StoreEntitySet="Audit_Update">
+          <ScalarProperty Name="Audit_Update_ID" ColumnName="Audit_Update_ID" />
+          <ScalarProperty Name="PK_Row_Effected" ColumnName="PK_Row_Effected" />
+          <ScalarProperty Name="Field_Effected" ColumnName="Field_Effected" />
+          <ScalarProperty Name="Before_Value" ColumnName="Before_Value" />
+          <ScalarProperty Name="After_Value" ColumnName="After_Value" />
+          <ScalarProperty Name="Audit_Log_ID" ColumnName="Audit_Log_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Baking_Schedule">
+      <EntityTypeMapping TypeName="iBeanModel.Baking_Schedule">
+        <MappingFragment StoreEntitySet="Baking_Schedule">
+          <ScalarProperty Name="Baking_Schedule_ID" ColumnName="Baking_Schedule_ID" />
+          <ScalarProperty Name="Schedule_Date" ColumnName="Schedule_Date" />
+          <ScalarProperty Name="Baking_Quantity" ColumnName="Baking_Quantity" />
+          <ScalarProperty Name="Stock_ID" ColumnName="Stock_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bussiness_Trading_Hours">
+      <EntityTypeMapping TypeName="iBeanModel.Bussiness_Trading_Hours">
+        <MappingFragment StoreEntitySet="Bussiness_Trading_Hours">
+          <ScalarProperty Name="Trading_Hours_ID" ColumnName="Trading_Hours_ID" />
+          <ScalarProperty Name="Operating_At" ColumnName="Operating_At" />
+          <ScalarProperty Name="Day_Of_Hours" ColumnName="Day_Of_Hours" />
+          <ScalarProperty Name="Trading_Hours" ColumnName="Trading_Hours" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company_Information">
+      <EntityTypeMapping TypeName="iBeanModel.Company_Information">
+        <MappingFragment StoreEntitySet="Company_Information">
+          <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+          <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+          <ScalarProperty Name="Company_Address" ColumnName="Company_Address" />
+          <ScalarProperty Name="VAT_Number" ColumnName="VAT_Number" />
+          <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+          <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
+          <ScalarProperty Name="Telephone_Number" ColumnName="Telephone_Number" />
+          <ScalarProperty Name="VAT_Percentage" ColumnName="VAT_Percentage" />
+          <ScalarProperty Name="Logout_Customer" ColumnName="Logout_Customer" />
+          <ScalarProperty Name="Logout_Employee" ColumnName="Logout_Employee" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Corporate_Customer">
+      <EntityTypeMapping TypeName="iBeanModel.Corporate_Customer">
+        <MappingFragment StoreEntitySet="Corporate_Customer">
+          <ScalarProperty Name="Corporate_Customer_ID" ColumnName="Corporate_Customer_ID" />
+          <ScalarProperty Name="VAT_Number" ColumnName="VAT_Number" />
+          <ScalarProperty Name="Organisation_Name" ColumnName="Organisation_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="iBeanModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Work_Number" ColumnName="Work_Number" />
+          <ScalarProperty Name="Home_Number" ColumnName="Home_Number" />
+          <ScalarProperty Name="Date_Of_Birth" ColumnName="Date_Of_Birth" />
+          <ScalarProperty Name="Balance_Owed" ColumnName="Balance_Owed" />
+          <ScalarProperty Name="Corporate_Customer_ID" ColumnName="Corporate_Customer_ID" />
+          <ScalarProperty Name="Customer_Type_ID" ColumnName="Customer_Type_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Marketing_ID" ColumnName="Marketing_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_Order">
+      <EntityTypeMapping TypeName="iBeanModel.Customer_Order">
+        <MappingFragment StoreEntitySet="Customer_Order">
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="Date_Placed" ColumnName="Date_Placed" />
+          <ScalarProperty Name="Date_Due" ColumnName="Date_Due" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Order_Status_ID" ColumnName="Order_Status_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_Order_Line">
+      <EntityTypeMapping TypeName="iBeanModel.Customer_Order_Line">
+        <MappingFragment StoreEntitySet="Customer_Order_Line">
+          <ScalarProperty Name="Order_Line_ID" ColumnName="Order_Line_ID" />
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="Stock_ID" ColumnName="Stock_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_Type">
+      <EntityTypeMapping TypeName="iBeanModel.Customer_Type">
+        <MappingFragment StoreEntitySet="Customer_Type">
+          <ScalarProperty Name="Customer_Type_ID" ColumnName="Customer_Type_ID" />
+          <ScalarProperty Name="Customer_Type_Description" ColumnName="Customer_Type_Description" />
+          <ScalarProperty Name="Customer_Discount" ColumnName="Customer_Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Delivery_Job">
+      <EntityTypeMapping TypeName="iBeanModel.Delivery_Job">
+        <MappingFragment StoreEntitySet="Delivery_Job">
+          <ScalarProperty Name="Delivery_Job_ID" ColumnName="Delivery_Job_ID" />
+          <ScalarProperty Name="Delivery_Note" ColumnName="Delivery_Note" />
+          <ScalarProperty Name="Delivery_Address" ColumnName="Delivery_Address" />
+          <ScalarProperty Name="Extra_Charges" ColumnName="Extra_Charges" />
+          <ScalarProperty Name="Delivery_Status_ID" ColumnName="Delivery_Status_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Delivery_Status">
+      <EntityTypeMapping TypeName="iBeanModel.Delivery_Status">
+        <MappingFragment StoreEntitySet="Delivery_Status">
+          <ScalarProperty Name="Delivery_Status_ID" ColumnName="Delivery_Status_ID" />
+          <ScalarProperty Name="Delivery_Status_Description" ColumnName="Delivery_Status_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emergency_Contact">
+      <EntityTypeMapping TypeName="iBeanModel.Emergency_Contact">
+        <MappingFragment StoreEntitySet="Emergency_Contact">
+          <ScalarProperty Name="Emergency_Contact_ID" ColumnName="Emergency_Contact_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+          <ScalarProperty Name="Alternative_Number" ColumnName="Alternative_Number" />
+          <ScalarProperty Name="Relationship_ID" ColumnName="Relationship_ID" />
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee_Type">
+      <EntityTypeMapping TypeName="iBeanModel.Employee_Type">
+        <MappingFragment StoreEntitySet="Employee_Type">
+          <ScalarProperty Name="Employee_Type_ID" ColumnName="Employee_Type_ID" />
+          <ScalarProperty Name="Employee_Type_Description" ColumnName="Employee_Type_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="iBeanModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+          <ScalarProperty Name="Show_As_Contact" ColumnName="Show_As_Contact" />
+          <ScalarProperty Name="Alternative_Number" ColumnName="Alternative_Number" />
+          <ScalarProperty Name="Physical_Address" ColumnName="Physical_Address" />
+          <ScalarProperty Name="Profile_Picture" ColumnName="Profile_Picture" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
+          <ScalarProperty Name="Related_Documents" ColumnName="Related_Documents" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Employee_Type_ID" ColumnName="Employee_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iBean_User">
+      <EntityTypeMapping TypeName="iBeanModel.iBean_User">
+        <MappingFragment StoreEntitySet="iBean_User">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Cell_Number" ColumnName="Cell_Number" />
+          <ScalarProperty Name="User_Type_ID" ColumnName="User_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ingredients">
+      <EntityTypeMapping TypeName="iBeanModel.Ingredient">
+        <MappingFragment StoreEntitySet="Ingredient">
+          <ScalarProperty Name="Ingredient_ID" ColumnName="Ingredient_ID" />
+          <ScalarProperty Name="Raw_Material_ID" ColumnName="Raw_Material_ID" />
+          <ScalarProperty Name="Stock_ID" ColumnName="Stock_ID" />
+          <ScalarProperty Name="Quantity_Per_Stock_Unit" ColumnName="Quantity_Per_Stock_Unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marketings">
+      <EntityTypeMapping TypeName="iBeanModel.Marketing">
+        <MappingFragment StoreEntitySet="Marketing">
+          <ScalarProperty Name="Marketing_ID" ColumnName="Marketing_ID" />
+          <ScalarProperty Name="Specials" ColumnName="Specials" />
+          <ScalarProperty Name="Events" ColumnName="Events" />
+          <ScalarProperty Name="SMS" ColumnName="SMS" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marketing_Template">
+      <EntityTypeMapping TypeName="iBeanModel.Marketing_Template">
+        <MappingFragment StoreEntitySet="Marketing_Template">
+          <ScalarProperty Name="Template_ID" ColumnName="Template_ID" />
+          <ScalarProperty Name="Template_Description" ColumnName="Template_Description" />
+          <ScalarProperty Name="Template_Text" ColumnName="Template_Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Material_Supplied">
+      <EntityTypeMapping TypeName="iBeanModel.Material_Supplied">
+        <MappingFragment StoreEntitySet="Material_Supplied">
+          <ScalarProperty Name="Raw_Material_ID" ColumnName="Raw_Material_ID" />
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Material_Supplied_ID" ColumnName="Material_Supplied_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Status">
+      <EntityTypeMapping TypeName="iBeanModel.Order_Status">
+        <MappingFragment StoreEntitySet="Order_Status">
+          <ScalarProperty Name="Order_Status_ID" ColumnName="Order_Status_ID" />
+          <ScalarProperty Name="Order_Status_Description" ColumnName="Order_Status_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="iBeanModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="Payment_ID" ColumnName="Payment_ID" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_Type">
+      <EntityTypeMapping TypeName="iBeanModel.Payment_Type">
+        <MappingFragment StoreEntitySet="Payment_Type">
+          <ScalarProperty Name="Payment_Type_ID" ColumnName="Payment_Type_ID" />
+          <ScalarProperty Name="Payment_Type_Description" ColumnName="Payment_Type_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Price_Over_Time">
+      <EntityTypeMapping TypeName="iBeanModel.Price_Over_Time">
+        <MappingFragment StoreEntitySet="Price_Over_Time">
+          <ScalarProperty Name="Price_ID" ColumnName="Price_ID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Begin_date" ColumnName="Begin_date" />
+          <ScalarProperty Name="End_date" ColumnName="End_date" />
+          <ScalarProperty Name="Stock_ID" ColumnName="Stock_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_Back_Order">
+      <EntityTypeMapping TypeName="iBeanModel.Purchase_Back_Order">
+        <MappingFragment StoreEntitySet="Purchase_Back_Order">
+          <ScalarProperty Name="Back_Order_ID" ColumnName="Back_Order_ID" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Delivery_Date" ColumnName="Delivery_Date" />
+          <ScalarProperty Name="Purchase_Order_ID" ColumnName="Purchase_Order_ID" />
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+          <ScalarProperty Name="Order_Status_ID" ColumnName="Order_Status_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_Back_Order_Line">
+      <EntityTypeMapping TypeName="iBeanModel.Purchase_Back_Order_Line">
+        <MappingFragment StoreEntitySet="Purchase_Back_Order_Line">
+          <ScalarProperty Name="Back_Order_ID" ColumnName="Back_Order_ID" />
+          <ScalarProperty Name="Raw_Material_ID" ColumnName="Raw_Material_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Purchase_Back_Order_Line_ID" ColumnName="Purchase_Back_Order_Line_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_Order">
+      <EntityTypeMapping TypeName="iBeanModel.Purchase_Order">
+        <MappingFragment StoreEntitySet="Purchase_Order">
+          <ScalarProperty Name="Purchase_Order_ID" ColumnName="Purchase_Order_ID" />
+          <ScalarProperty Name="Date_Placed" ColumnName="Date_Placed" />
+          <ScalarProperty Name="Delivery_Date" ColumnName="Delivery_Date" />
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+          <ScalarProperty Name="Order_Status_ID" ColumnName="Order_Status_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchase_Order_Line">
+      <EntityTypeMapping TypeName="iBeanModel.Purchase_Order_Line">
+        <MappingFragment StoreEntitySet="Purchase_Order_Line">
+          <ScalarProperty Name="Purchase_Order_ID" ColumnName="Purchase_Order_ID" />
+          <ScalarProperty Name="Raw_Material_ID" ColumnName="Raw_Material_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Purchase_Order_Line_ID" ColumnName="Purchase_Order_Line_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Raw_Material">
+      <EntityTypeMapping TypeName="iBeanModel.Raw_Material">
+        <MappingFragment StoreEntitySet="Raw_Material">
+          <ScalarProperty Name="Raw_Material_ID" ColumnName="Raw_Material_ID" />
+          <ScalarProperty Name="Raw_Material_Description" ColumnName="Raw_Material_Description" />
+          <ScalarProperty Name="Quantity_On_Hand" ColumnName="Quantity_On_Hand" />
+          <ScalarProperty Name="Minimum_Reorder_Level" ColumnName="Minimum_Reorder_Level" />
+          <ScalarProperty Name="Defualt_Supplier_ID" ColumnName="Defualt_Supplier_ID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Unit_Of_Measure_ID" ColumnName="Unit_Of_Measure_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Raw_Material_Written_Off">
+      <EntityTypeMapping TypeName="iBeanModel.Raw_Material_Written_Off">
+        <MappingFragment StoreEntitySet="Raw_Material_Written_Off">
+          <ScalarProperty Name="Raw_Material_Written_Off_ID" ColumnName="Raw_Material_Written_Off_ID" />
+          <ScalarProperty Name="Write_Off_Date" ColumnName="Write_Off_Date" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Raw_Material_ID" ColumnName="Raw_Material_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Relationships">
+      <EntityTypeMapping TypeName="iBeanModel.Relationship">
+        <MappingFragment StoreEntitySet="Relationship">
+          <ScalarProperty Name="Relationship_ID" ColumnName="Relationship_ID" />
+          <ScalarProperty Name="Relationship_Description" ColumnName="Relationship_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Retail_Sale">
+      <EntityTypeMapping TypeName="iBeanModel.Retail_Sale">
+        <MappingFragment StoreEntitySet="Retail_Sale">
+          <ScalarProperty Name="Sale_ID" ColumnName="Sale_ID" />
+          <ScalarProperty Name="Payment_ID" ColumnName="Payment_ID" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Order_Status_ID" ColumnName="Order_Status_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Retail_Sale_Line">
+      <EntityTypeMapping TypeName="iBeanModel.Retail_Sale_Line">
+        <MappingFragment StoreEntitySet="Retail_Sale_Line">
+          <ScalarProperty Name="Retail_Sale_Line_ID" ColumnName="Retail_Sale_Line_ID" />
+          <ScalarProperty Name="Sale_ID" ColumnName="Sale_ID" />
+          <ScalarProperty Name="Stock_ID" ColumnName="Stock_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Specials">
+      <EntityTypeMapping TypeName="iBeanModel.Special">
+        <MappingFragment StoreEntitySet="Special">
+          <ScalarProperty Name="Special_ID" ColumnName="Special_ID" />
+          <ScalarProperty Name="Stock_ID" ColumnName="Stock_ID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Begin_date" ColumnName="Begin_date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stocks">
+      <EntityTypeMapping TypeName="iBeanModel.Stock">
+        <MappingFragment StoreEntitySet="Stock">
+          <ScalarProperty Name="Stock_ID" ColumnName="Stock_ID" />
+          <ScalarProperty Name="Stock_Name" ColumnName="Stock_Name" />
+          <ScalarProperty Name="Stock_Description" ColumnName="Stock_Description" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Special" ColumnName="Special" />
+          <ScalarProperty Name="Quantity_Available" ColumnName="Quantity_Available" />
+          <ScalarProperty Name="Quantity_On_Hand" ColumnName="Quantity_On_Hand" />
+          <ScalarProperty Name="Display_Image" ColumnName="Display_Image" />
+          <ScalarProperty Name="production_Time" ColumnName="production_Time" />
+          <ScalarProperty Name="Unit_Of_Measure_ID" ColumnName="Unit_Of_Measure_ID" />
+          <ScalarProperty Name="Stock_Category_ID" ColumnName="Stock_Category_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stock_Category">
+      <EntityTypeMapping TypeName="iBeanModel.Stock_Category">
+        <MappingFragment StoreEntitySet="Stock_Category">
+          <ScalarProperty Name="Stock_Category_ID" ColumnName="Stock_Category_ID" />
+          <ScalarProperty Name="Display_Image" ColumnName="Display_Image" />
+          <ScalarProperty Name="Stock_Category_Description" ColumnName="Stock_Category_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stock_Written_Off">
+      <EntityTypeMapping TypeName="iBeanModel.Stock_Written_Off">
+        <MappingFragment StoreEntitySet="Stock_Written_Off">
+          <ScalarProperty Name="Stock_Written_Off_ID" ColumnName="Stock_Written_Off_ID" />
+          <ScalarProperty Name="Write_Off_Date" ColumnName="Write_Off_Date" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Stock_ID" ColumnName="Stock_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="iBeanModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+          <ScalarProperty Name="Supplier_Name" ColumnName="Supplier_Name" />
+          <ScalarProperty Name="VAT_Number" ColumnName="VAT_Number" />
+          <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
+          <ScalarProperty Name="Contact_Person" ColumnName="Contact_Person" />
+          <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+          <ScalarProperty Name="Supplier_Address" ColumnName="Supplier_Address" />
+          <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="iBeanModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unit_Conversion">
+      <EntityTypeMapping TypeName="iBeanModel.Unit_Conversion">
+        <MappingFragment StoreEntitySet="Unit_Conversion">
+          <ScalarProperty Name="Conversion_ID" ColumnName="Conversion_ID" />
+          <ScalarProperty Name="From_Unit" ColumnName="From_Unit" />
+          <ScalarProperty Name="To_Unit" ColumnName="To_Unit" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unit_Of_Measure">
+      <EntityTypeMapping TypeName="iBeanModel.Unit_Of_Measure">
+        <MappingFragment StoreEntitySet="Unit_Of_Measure">
+          <ScalarProperty Name="Unit_Of_Measure_ID" ColumnName="Unit_Of_Measure_ID" />
+          <ScalarProperty Name="Unit_Of_Measure_Description" ColumnName="Unit_Of_Measure_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Type">
+      <EntityTypeMapping TypeName="iBeanModel.User_Type">
+        <MappingFragment StoreEntitySet="User_Type">
+          <ScalarProperty Name="User_Type_ID" ColumnName="User_Type_ID" />
+          <ScalarProperty Name="User_Type_Description" ColumnName="User_Type_Description" />
+          <ScalarProperty Name="Raw_Material_Acess" ColumnName="Raw_Material_Acess" />
+          <ScalarProperty Name="Stock_Acess" ColumnName="Stock_Acess" />
+          <ScalarProperty Name="Employee_Acess" ColumnName="Employee_Acess" />
+          <ScalarProperty Name="Customer_Acess" ColumnName="Customer_Acess" />
+          <ScalarProperty Name="Customer_Order_Acess" ColumnName="Customer_Order_Acess" />
+          <ScalarProperty Name="Delivery_Job_Acess" ColumnName="Delivery_Job_Acess" />
+          <ScalarProperty Name="Supplier_Acess" ColumnName="Supplier_Acess" />
+          <ScalarProperty Name="Make_Sale_Acess" ColumnName="Make_Sale_Acess" />
+          <ScalarProperty Name="Administrator_Acess" ColumnName="Administrator_Acess" />
+          <ScalarProperty Name="Reporting_Acess" ColumnName="Reporting_Acess" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -116,6 +116,7 @@ namespace DesktopApp
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Successfully Packaged");
             // Displays a SaveFileDialog so the user can save the Image
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "Bitmap Image|*.bmp|PNG Image|*.png|JPeg Image|*.jpg|Gif Image|*.gif";

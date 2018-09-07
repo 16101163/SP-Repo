@@ -29,17 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.Outstanding_DelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+           // this.OutstandingDelDs = new DesktopApp.OutstandingDelDs();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Outstanding_DelTableAdapter = new DesktopApp.OutstandingDelDsTableAdapters.Outstanding_DelTableAdapter();
-            this.Outstanding_DelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.OutstandingDelDs = new DesktopApp.OutstandingDelDs();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.groupBox1.SuspendLayout();
+           // this.Outstanding_DelTableAdapter = new DesktopApp.OutstandingDelDsTableAdapters.Outstanding_DelTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.Outstanding_DelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OutstandingDelDs)).BeginInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.OutstandingDelDs)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // Outstanding_DelBindingSource
+            // 
+            this.Outstanding_DelBindingSource.DataMember = "Outstanding_Del";
+            //this.Outstanding_DelBindingSource.DataSource = this.OutstandingDelDs;
+            // 
+            // OutstandingDelDs
+            // 
+          //  this.OutstandingDelDs.DataSetName = "OutstandingDelDs";
+           // this.OutstandingDelDs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -62,33 +72,23 @@
             this.groupBox1.Size = new System.Drawing.Size(891, 405);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Outstanding Deliveries repo";
+            this.groupBox1.Text = "Outstanding Deliveries report";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // Outstanding_DelTableAdapter
-            // 
-            this.Outstanding_DelTableAdapter.ClearBeforeFill = true;
-            // 
-            // Outstanding_DelBindingSource
-            // 
-            this.Outstanding_DelBindingSource.DataMember = "Outstanding_Del";
-            this.Outstanding_DelBindingSource.DataSource = this.OutstandingDelDs;
-            // 
-            // OutstandingDelDs
-            // 
-            this.OutstandingDelDs.DataSetName = "OutstandingDelDs";
-            this.OutstandingDelDs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
-            reportDataSource4.Name = "Outstanding_Report";
-            reportDataSource4.Value = this.Outstanding_DelBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource1.Name = "Outstanding_Report";
+            reportDataSource1.Value = this.Outstanding_DelBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "DesktopApp.Report3.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(48, 48);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(813, 308);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // Outstanding_DelTableAdapter
+            // 
+           // this.Outstanding_DelTableAdapter.ClearBeforeFill = true;
             // 
             // UCOutstandingDeliveriesReport
             // 
@@ -99,9 +99,9 @@
             this.Name = "UCOutstandingDeliveriesReport";
             this.Size = new System.Drawing.Size(951, 490);
             this.Load += new System.EventHandler(this.UCOutstandingDeliveriesReport_Load);
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Outstanding_DelBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OutstandingDelDs)).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.OutstandingDelDs)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,9 +111,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private OutstandingDelDsTableAdapters.Outstanding_DelTableAdapter Outstanding_DelTableAdapter;
+       // private OutstandingDelDsTableAdapters.Outstanding_DelTableAdapter Outstanding_DelTableAdapter;
         private System.Windows.Forms.BindingSource Outstanding_DelBindingSource;
-        private OutstandingDelDs OutstandingDelDs;
+       // private OutstandingDelDs OutstandingDelDs;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

@@ -45,6 +45,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -52,9 +53,9 @@
             this.label2.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(36, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 16);
+            this.label2.Size = new System.Drawing.Size(139, 16);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Select Product Type:";
+            this.label2.Text = "Selected Product Type:";
             // 
             // comboBox1
             // 

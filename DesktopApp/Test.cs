@@ -20,7 +20,7 @@ namespace DesktopApp
         private void Test_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'OutstandingDelDs.Outstanding_Del' table. You can move, or remove it, as needed.
-            this.Outstanding_DelTableAdapter.Fill(this.OutstandingDelDs.Outstanding_Del);
+           // this.Outstanding_DelTableAdapter.Fill(this.OutstandingDelDs.Outstanding_Del);
 
             this.reportViewer1.RefreshReport();
         }

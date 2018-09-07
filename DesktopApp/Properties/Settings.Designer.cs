@@ -66,5 +66,26 @@ namespace DesktopApp.Properties {
                 return ((string)(this["DbOutstandingDelConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\dbEmployeeRep" +
+            "ort.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string dbEmployeeReportConnectionString {
+            get {
+                return ((string)(this["dbEmployeeReportConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=SP;Integrated Security=True")]
+        public string SPConnectionString {
+            get {
+                return ((string)(this["SPConnectionString"]));
+            }
+        }
     }
 }

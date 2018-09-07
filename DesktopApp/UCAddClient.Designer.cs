@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAddClient));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,43 +38,45 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.ComboBox();
+            this.cityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtProvince = new System.Windows.Forms.ComboBox();
+            this.provinceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtPhysicalAdd = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtVatRegNum = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTelephone = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtFaxNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtEmailAdd = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtCreditAppro = new System.Windows.Forms.TextBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.clientAccountStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.txtApprovedBy = new System.Windows.Forms.TextBox();
+            this.txtDateTimeDateOfCommencement = new System.Windows.Forms.DateTimePicker();
+            this.txtCreditSta = new System.Windows.Forms.ComboBox();
+            this.creditStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.clientAccountStatusBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -82,11 +85,15 @@
             this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).BeginInit();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -177,28 +184,19 @@
             // groupBox4
             // 
             this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox4.Controls.Add(this.textBox9);
             this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.comboBox3);
-            this.groupBox4.Controls.Add(this.comboBox1);
-            this.groupBox4.Controls.Add(this.textBox6);
+            this.groupBox4.Controls.Add(this.txtCity);
+            this.groupBox4.Controls.Add(this.txtProvince);
+            this.groupBox4.Controls.Add(this.txtPhysicalAdd);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Location = new System.Drawing.Point(-3, 178);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(636, 170);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Place Of Business";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(129, 141);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(132, 23);
-            this.textBox9.TabIndex = 10;
             // 
             // button4
             // 
@@ -209,42 +207,41 @@
             this.button4.TabIndex = 20;
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // txtCity
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Pretoria",
-            "Johannesburg"});
-            this.comboBox3.Location = new System.Drawing.Point(444, 100);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(132, 24);
-            this.comboBox3.TabIndex = 19;
+            this.txtCity.DataSource = this.cityBindingSource;
+            this.txtCity.DisplayMember = "City_Name";
+            this.txtCity.FormattingEnabled = true;
+            this.txtCity.Location = new System.Drawing.Point(444, 100);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(132, 24);
+            this.txtCity.TabIndex = 19;
             // 
-            // comboBox1
+            // cityBindingSource
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Gauteng",
-            "Limpopo",
-            "Western Cape",
-            "Mpumalanga",
-            "Kwa-Zulu Natal",
-            "Nothern Cape",
-            "North West",
-            "Free State",
-            "Eastern Cape"});
-            this.comboBox1.Location = new System.Drawing.Point(129, 102);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(132, 24);
-            this.comboBox1.TabIndex = 17;
+            this.cityBindingSource.DataSource = typeof(DesktopApp.City);
             // 
-            // textBox6
+            // txtProvince
             // 
-            this.textBox6.Location = new System.Drawing.Point(129, 22);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(493, 74);
-            this.textBox6.TabIndex = 14;
+            this.txtProvince.DataSource = this.provinceBindingSource;
+            this.txtProvince.DisplayMember = "Province_Name";
+            this.txtProvince.FormattingEnabled = true;
+            this.txtProvince.Location = new System.Drawing.Point(129, 102);
+            this.txtProvince.Name = "txtProvince";
+            this.txtProvince.Size = new System.Drawing.Size(132, 24);
+            this.txtProvince.TabIndex = 17;
+            // 
+            // provinceBindingSource
+            // 
+            this.provinceBindingSource.DataSource = typeof(DesktopApp.Province);
+            // 
+            // txtPhysicalAdd
+            // 
+            this.txtPhysicalAdd.Location = new System.Drawing.Point(129, 22);
+            this.txtPhysicalAdd.Multiline = true;
+            this.txtPhysicalAdd.Name = "txtPhysicalAdd";
+            this.txtPhysicalAdd.Size = new System.Drawing.Size(493, 74);
+            this.txtPhysicalAdd.TabIndex = 14;
             // 
             // label10
             // 
@@ -276,23 +273,13 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Province:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Maiandra GD", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 141);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 16);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Postal Code:";
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtName);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtVatRegNum);
             this.groupBox2.Location = new System.Drawing.Point(-6, 19);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(639, 48);
@@ -310,12 +297,12 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Name:";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 23);
-            this.textBox1.TabIndex = 0;
+            this.txtName.Location = new System.Drawing.Point(132, 16);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(132, 23);
+            this.txtName.TabIndex = 0;
             // 
             // label3
             // 
@@ -327,23 +314,23 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "VAT Registration Number:";
             // 
-            // textBox2
+            // txtVatRegNum
             // 
-            this.textBox2.Location = new System.Drawing.Point(493, 16);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 23);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = " ";
+            this.txtVatRegNum.Location = new System.Drawing.Point(493, 16);
+            this.txtVatRegNum.Name = "txtVatRegNum";
+            this.txtVatRegNum.Size = new System.Drawing.Size(132, 23);
+            this.txtVatRegNum.TabIndex = 1;
+            this.txtVatRegNum.Text = " ";
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.txtTelephone);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.txtFaxNumber);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.txtEmailAdd);
             this.groupBox3.Location = new System.Drawing.Point(-6, 73);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(639, 99);
@@ -361,12 +348,12 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Email Address:";
             // 
-            // textBox3
+            // txtTelephone
             // 
-            this.textBox3.Location = new System.Drawing.Point(132, 16);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(132, 23);
-            this.textBox3.TabIndex = 2;
+            this.txtTelephone.Location = new System.Drawing.Point(132, 16);
+            this.txtTelephone.Name = "txtTelephone";
+            this.txtTelephone.Size = new System.Drawing.Size(132, 23);
+            this.txtTelephone.TabIndex = 2;
             // 
             // label5
             // 
@@ -378,12 +365,12 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Fax Number:";
             // 
-            // textBox4
+            // txtFaxNumber
             // 
-            this.textBox4.Location = new System.Drawing.Point(493, 15);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(132, 23);
-            this.textBox4.TabIndex = 3;
+            this.txtFaxNumber.Location = new System.Drawing.Point(493, 15);
+            this.txtFaxNumber.Name = "txtFaxNumber";
+            this.txtFaxNumber.Size = new System.Drawing.Size(132, 23);
+            this.txtFaxNumber.TabIndex = 3;
             // 
             // label4
             // 
@@ -395,22 +382,22 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Telephone:";
             // 
-            // textBox5
+            // txtEmailAdd
             // 
-            this.textBox5.Location = new System.Drawing.Point(132, 56);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(132, 23);
-            this.textBox5.TabIndex = 4;
+            this.txtEmailAdd.Location = new System.Drawing.Point(132, 56);
+            this.txtEmailAdd.Name = "txtEmailAdd";
+            this.txtEmailAdd.Size = new System.Drawing.Size(132, 23);
+            this.txtEmailAdd.TabIndex = 4;
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.txtCreditAppro);
             this.groupBox5.Controls.Add(this.comboBox5);
             this.groupBox5.Controls.Add(this.label16);
             this.groupBox5.Controls.Add(this.groupBox6);
-            this.groupBox5.Controls.Add(this.numericUpDown1);
-            this.groupBox5.Controls.Add(this.textBox7);
-            this.groupBox5.Controls.Add(this.dateTimePicker1);
-            this.groupBox5.Controls.Add(this.comboBox4);
+            this.groupBox5.Controls.Add(this.txtApprovedBy);
+            this.groupBox5.Controls.Add(this.txtDateTimeDateOfCommencement);
+            this.groupBox5.Controls.Add(this.txtCreditSta);
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.label12);
@@ -423,17 +410,27 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Credit Approval Information";
             // 
+            // txtCreditAppro
+            // 
+            this.txtCreditAppro.Location = new System.Drawing.Point(195, 28);
+            this.txtCreditAppro.Name = "txtCreditAppro";
+            this.txtCreditAppro.Size = new System.Drawing.Size(200, 23);
+            this.txtCreditAppro.TabIndex = 10;
+            // 
             // comboBox5
             // 
             this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox5.DataSource = this.clientAccountStatusBindingSource;
+            this.comboBox5.DisplayMember = "Account_Status_Description";
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Active",
-            "Inactive"});
             this.comboBox5.Location = new System.Drawing.Point(195, 141);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(200, 24);
             this.comboBox5.TabIndex = 23;
+            // 
+            // clientAccountStatusBindingSource
+            // 
+            this.clientAccountStatusBindingSource.DataSource = typeof(DesktopApp.Client_Account_Status);
             // 
             // label16
             // 
@@ -451,8 +448,7 @@
             this.groupBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox6.Controls.Add(this.button2);
             this.groupBox6.Controls.Add(this.label15);
-            this.groupBox6.Controls.Add(this.button1);
-            this.groupBox6.Controls.Add(this.textBox8);
+            this.groupBox6.Controls.Add(this.txtFilePath);
             this.groupBox6.Font = new System.Drawing.Font("Maiandra GD", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(3, 178);
             this.groupBox6.Name = "groupBox6";
@@ -468,8 +464,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 10;
-            this.button2.Text = "Upload";
+            this.button2.Text = "browse";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label15
             // 
@@ -482,62 +479,45 @@
             this.label15.TabIndex = 9;
             this.label15.Text = "File Path:";
             // 
-            // button1
+            // txtFilePath
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.Location = new System.Drawing.Point(216, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Browse";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtFilePath.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtFilePath.Location = new System.Drawing.Point(72, 27);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.Size = new System.Drawing.Size(308, 23);
+            this.txtFilePath.TabIndex = 7;
             // 
-            // textBox8
+            // txtApprovedBy
             // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox8.Location = new System.Drawing.Point(72, 27);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(308, 23);
-            this.textBox8.TabIndex = 7;
+            this.txtApprovedBy.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtApprovedBy.Location = new System.Drawing.Point(195, 87);
+            this.txtApprovedBy.Name = "txtApprovedBy";
+            this.txtApprovedBy.Size = new System.Drawing.Size(200, 23);
+            this.txtApprovedBy.TabIndex = 7;
             // 
-            // numericUpDown1
+            // txtDateTimeDateOfCommencement
             // 
-            this.numericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.numericUpDown1.Location = new System.Drawing.Point(195, 36);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            20000000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(200, 23);
-            this.numericUpDown1.TabIndex = 20;
+            this.txtDateTimeDateOfCommencement.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtDateTimeDateOfCommencement.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtDateTimeDateOfCommencement.Location = new System.Drawing.Point(195, 112);
+            this.txtDateTimeDateOfCommencement.Name = "txtDateTimeDateOfCommencement";
+            this.txtDateTimeDateOfCommencement.Size = new System.Drawing.Size(200, 23);
+            this.txtDateTimeDateOfCommencement.TabIndex = 19;
             // 
-            // textBox7
+            // txtCreditSta
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox7.Location = new System.Drawing.Point(195, 87);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(200, 23);
-            this.textBox7.TabIndex = 7;
+            this.txtCreditSta.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCreditSta.DataSource = this.creditStatusBindingSource;
+            this.txtCreditSta.DisplayMember = "Credit_Status_Description";
+            this.txtCreditSta.FormattingEnabled = true;
+            this.txtCreditSta.Location = new System.Drawing.Point(195, 61);
+            this.txtCreditSta.Name = "txtCreditSta";
+            this.txtCreditSta.Size = new System.Drawing.Size(200, 24);
+            this.txtCreditSta.TabIndex = 18;
             // 
-            // dateTimePicker1
+            // creditStatusBindingSource
             // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(195, 112);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 19;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(195, 61);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(200, 24);
-            this.comboBox4.TabIndex = 18;
+            this.creditStatusBindingSource.DataSource = typeof(DesktopApp.Credit_Status);
             // 
             // label14
             // 
@@ -583,6 +563,10 @@
             this.label11.TabIndex = 6;
             this.label11.Text = "Credit Approval Amount:";
             // 
+            // clientAccountStatusBindingSource1
+            // 
+            this.clientAccountStatusBindingSource1.DataSource = typeof(DesktopApp.Client_Account_Status);
+            // 
             // UCAddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -593,6 +577,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UCAddClient";
             this.Size = new System.Drawing.Size(1131, 536);
+            this.Load += new System.EventHandler(this.UCAddClient_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -603,15 +588,19 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cityBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.creditStatusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientAccountStatusBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -627,12 +616,10 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox txtFilePath;
+        private System.Windows.Forms.TextBox txtApprovedBy;
+        private System.Windows.Forms.DateTimePicker txtDateTimeDateOfCommencement;
+        private System.Windows.Forms.ComboBox txtCreditSta;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -642,26 +629,30 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox txtCity;
+        private System.Windows.Forms.ComboBox txtProvince;
+        private System.Windows.Forms.TextBox txtPhysicalAdd;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtVatRegNum;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTelephone;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtFaxNumber;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtEmailAdd;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.BindingSource provinceBindingSource;
+        private System.Windows.Forms.BindingSource cityBindingSource;
+        private System.Windows.Forms.BindingSource clientAccountStatusBindingSource;
+        private System.Windows.Forms.TextBox txtCreditAppro;
+        private System.Windows.Forms.BindingSource clientAccountStatusBindingSource1;
+        private System.Windows.Forms.BindingSource creditStatusBindingSource;
     }
 }

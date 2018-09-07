@@ -81,7 +81,7 @@
             this.lblGeneratePO.Name = "lblGeneratePO";
             this.lblGeneratePO.Size = new System.Drawing.Size(168, 16);
             this.lblGeneratePO.TabIndex = 0;
-            this.lblGeneratePO.Text = "Add User";
+            this.lblGeneratePO.Text = "Register User";
             this.lblGeneratePO.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // panel2

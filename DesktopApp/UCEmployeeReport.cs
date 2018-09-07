@@ -16,5 +16,13 @@ namespace DesktopApp
         {
             InitializeComponent();
         }
+
+        private void UCEmployeeReport_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'OutstandingDelDs.Outstanding_Del' table. You can move, or remove it, as needed.
+            this.EmployeeReportTableAdapter.Fill(this.DsEmployeeReport.EmployeeReport);
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

@@ -32,7 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.outstandingDelDs1 = new DesktopApp.OutstandingDelDs();
+           // this.outstandingDelDs1 = new DesktopApp.OutstandingDelDs();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.outstandingDelDs1)).BeginInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.outstandingDelDs1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -88,8 +88,8 @@
             // 
             // outstandingDelDs1
             // 
-            this.outstandingDelDs1.DataSetName = "OutstandingDelDs";
-            this.outstandingDelDs1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           // this.outstandingDelDs1.DataSetName = "OutstandingDelDs";
+           // this.outstandingDelDs1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -270,7 +270,7 @@
             this.Size = new System.Drawing.Size(844, 518);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.outstandingDelDs1)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.outstandingDelDs1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -286,7 +286,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private OutstandingDelDs outstandingDelDs1;
+        //private OutstandingDelDs outstandingDelDs1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;

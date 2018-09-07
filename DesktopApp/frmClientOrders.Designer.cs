@@ -30,25 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.ReportViewerClientOrder = new Microsoft.Reporting.WinForms.ReportViewer();
             this.OrderDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ReportViewerClientOrder = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.OrderDetailBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ReportViewerClientOrder
-            // 
-            reportDataSource1.Name = "OrderDetails";
-            reportDataSource1.Value = this.OrderDetailBindingSource;
-            this.ReportViewerClientOrder.LocalReport.DataSources.Add(reportDataSource1);
-            this.ReportViewerClientOrder.LocalReport.ReportEmbeddedResource = "DesktopApp.rptInvoice.rdlc";
-            this.ReportViewerClientOrder.Location = new System.Drawing.Point(-4, 12);
-            this.ReportViewerClientOrder.Name = "ReportViewerClientOrder";
-            this.ReportViewerClientOrder.Size = new System.Drawing.Size(805, 462);
-            this.ReportViewerClientOrder.TabIndex = 0;
             // 
             // OrderDetailBindingSource
             // 
             this.OrderDetailBindingSource.DataMember = "OrderDetail";
+            // 
+            // ReportViewerClientOrder
+            // 
+            this.ReportViewerClientOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "OrderDetails";
+            reportDataSource1.Value = this.OrderDetailBindingSource;
+            this.ReportViewerClientOrder.LocalReport.DataSources.Add(reportDataSource1);
+            this.ReportViewerClientOrder.LocalReport.ReportEmbeddedResource = "DesktopApp.rptClientOrders.rdlc";
+            this.ReportViewerClientOrder.Location = new System.Drawing.Point(0, 0);
+            this.ReportViewerClientOrder.Name = "ReportViewerClientOrder";
+            this.ReportViewerClientOrder.Size = new System.Drawing.Size(813, 486);
+            this.ReportViewerClientOrder.TabIndex = 0;
             // 
             // frmClientOrders
             // 
@@ -59,6 +60,7 @@
             this.Name = "frmClientOrders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ClientOrders";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmClientOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OrderDetailBindingSource)).EndInit();
             this.ResumeLayout(false);

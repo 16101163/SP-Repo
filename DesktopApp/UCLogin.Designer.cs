@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.lnlblForgotPassword = new System.Windows.Forms.LinkLabel();
-            this.btnProceed = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.BtnLogin = new System.Windows.Forms.Button();
+            this.txtPasswordLogin = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -50,28 +50,28 @@
             this.lnlblForgotPassword.Text = "Forgot Password";
             this.lnlblForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnlblForgotPassword_LinkClicked);
             // 
-            // btnProceed
+            // BtnLogin
             // 
-            this.btnProceed.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnProceed.Font = new System.Drawing.Font("Maiandra GD", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProceed.Location = new System.Drawing.Point(255, 222);
-            this.btnProceed.Name = "btnProceed";
-            this.btnProceed.Size = new System.Drawing.Size(167, 35);
-            this.btnProceed.TabIndex = 12;
-            this.btnProceed.Text = "Login";
-            this.btnProceed.UseVisualStyleBackColor = true;
-            this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
+            this.BtnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnLogin.Font = new System.Drawing.Font("Maiandra GD", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLogin.Location = new System.Drawing.Point(255, 222);
+            this.BtnLogin.Name = "BtnLogin";
+            this.BtnLogin.Size = new System.Drawing.Size(167, 35);
+            this.BtnLogin.TabIndex = 12;
+            this.BtnLogin.Text = "Login";
+            this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.Click += new System.EventHandler(this.btnProceed_Click);
             // 
-            // txtPassword
+            // txtPasswordLogin
             // 
-            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(256, 173);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(178, 19);
-            this.txtPassword.TabIndex = 11;
+            this.txtPasswordLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPasswordLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPasswordLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPasswordLogin.Location = new System.Drawing.Point(256, 173);
+            this.txtPasswordLogin.Name = "txtPasswordLogin";
+            this.txtPasswordLogin.PasswordChar = '*';
+            this.txtPasswordLogin.Size = new System.Drawing.Size(178, 19);
+            this.txtPasswordLogin.TabIndex = 11;
             // 
             // txtUsername
             // 
@@ -122,14 +122,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.Controls.Add(this.lnlblForgotPassword);
-            this.Controls.Add(this.btnProceed);
-            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.BtnLogin);
+            this.Controls.Add(this.txtPasswordLogin);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblLogin);
             this.Name = "UCLogin";
             this.Size = new System.Drawing.Size(571, 346);
+            this.Load += new System.EventHandler(this.UCLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,8 +139,8 @@
         #endregion
 
         private System.Windows.Forms.LinkLabel lnlblForgotPassword;
-        private System.Windows.Forms.Button btnProceed;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button BtnLogin;
+        private System.Windows.Forms.TextBox txtPasswordLogin;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblUsername;

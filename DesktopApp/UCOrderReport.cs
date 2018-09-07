@@ -26,7 +26,7 @@ namespace DesktopApp
             {
                 if (db.State == ConnectionState.Closed)
                     db.Open();
-                string query = "select o.OrderID, c.CustomerID, c.ContactName, c.Address, c.PostalCode, c.City, c.Phone, o.OrderDate" +
+                string query = "select o.OrderID, c.clientID, c.ContactName, c.Address, c.PostalCode, c.City, c.Phone, o.OrderDate" +
                                 " from orders o inner join customers c on o.CustomerID = c.CustomerID" +
                                $" where o.OrderDate between '{dtFromDate.Value}' and '{dtToDate.Value}'";
 

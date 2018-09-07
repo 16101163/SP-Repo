@@ -21,5 +21,13 @@ namespace DesktopApp
         {
            
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("The entered Username was not found ");
+            MessageBox.Show("The user password was reset successfully ");
+            MessageBox.Show("File selected not in the right format");
+
+        }
     }
 }

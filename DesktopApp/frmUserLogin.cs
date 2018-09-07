@@ -13,11 +13,11 @@ namespace DesktopApp
 {
     public partial class frmMain : Form
     {
-        int pw=200;
+        int pw = 200;
         bool hidden;
         public frmMain(bool activate)
         {
-           // frmSplashScreen load = new frmSplashScreen();
+            // frmSplashScreen load = new frmSplashScreen();
             Thread t = new Thread(new ThreadStart(splash));
             t.Start();
             Thread.Sleep(2000);
@@ -37,39 +37,39 @@ namespace DesktopApp
             clientToolStripMenuItem.Size = new Size(50, 50);
             productToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
             productToolStripMenuItem.Size = new Size(50, 50);
-           
+
             reportToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
             reportToolStripMenuItem.Size = new Size(50, 50);
 
-            pnlMenu.Width=60;
+            pnlMenu.Width = 60;
             pbxMenu.Location = new Point(12, 0);
             hidden = true;
-            
+
             MainMenuStrip.Enabled = activate;
-            if (menuStrip2.Enabled==true)
+            if (menuStrip2.Enabled == true)
             {
                 loginToolStripMenuItem.Text = "Logout";
-                ucDashboard1.BringToFront();
-                ucDashboard1.Dock = DockStyle.Fill;
+                //ucDashboard1.BringToFront();
+                //ucDashboard1.Dock = DockStyle.Fill;
                 Label user = new Label();
                 panel4.Controls.Add(user);
                 user.Text = " logged in as admin";
                 user.BringToFront();
                 user.Dock = DockStyle.Right;
-                user.Font = new Font("Maiandra GD",10);
+                user.Font = new Font("Maiandra GD", 10);
             }
-            
-            
+
+
         }
-    
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (hidden)
             {
                 pnlMenu.Width = pnlMenu.Width + 20;
-                pbxMenu.Location =  new Point(160,0);
-                if (pnlMenu.Width>=pw)
+                pbxMenu.Location = new Point(160, 0);
+                if (pnlMenu.Width >= pw)
                 {
                     tmrSlide.Stop();
                     hidden = false;
@@ -86,7 +86,7 @@ namespace DesktopApp
                 clientToolStripMenuItem.Size = new Size(200, 50);
                 productToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
                 productToolStripMenuItem.Size = new Size(200, 50);
-              
+
                 reportToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
                 reportToolStripMenuItem.Size = new Size(200, 50);
             }
@@ -111,7 +111,7 @@ namespace DesktopApp
                 clientToolStripMenuItem.Size = new Size(50, 50);
                 productToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 productToolStripMenuItem.Size = new Size(50, 50);
-               
+
                 reportToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Image;
                 reportToolStripMenuItem.Size = new Size(50, 50);
             }
@@ -138,8 +138,8 @@ namespace DesktopApp
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-           
-            
+
+
         }
 
         private void pbxMin_Click(object sender, EventArgs e)
@@ -149,33 +149,37 @@ namespace DesktopApp
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ucDashboard1.BringToFront();
-            ucDashboard1.Dock=DockStyle.Fill;
+            //ucDashboard1.BringToFront();
+            //ucDashboard1.Dock=DockStyle.Fill;
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ucLogin1.BringToFront();
-            ucLogin1.Dock = DockStyle.Fill;
+
+            MessageBox.Show("Are you sure you want to Log out ? ?", "confirmation", MessageBoxButtons.YesNo);
+
+
+            //ucLogin1.BringToFront();
+            //ucLogin1.Dock = DockStyle.Fill;
         }
 
         public void purchaseOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
-          //  ucPurchaseOrder1.panel4.Controls.Clear();
+
+            //  ucPurchaseOrder1.panel4.Controls.Clear();
             UCNull nullclient = new UCNull();
-            ucPurchaseOrder1.panel4.Controls.Add(nullclient);
+            // ucPurchaseOrder1.panel4.Controls.Add(nullclient);
             nullclient.BringToFront();
             nullclient.Dock = DockStyle.Fill;
-            ucPurchaseOrder1.BringToFront();
-            ucPurchaseOrder1.Dock = DockStyle.Fill;
+            //ucPurchaseOrder1.BringToFront();
+            //ucPurchaseOrder1.Dock = DockStyle.Fill;
 
         }
 
         private void supplierOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UCSupplier SupplierOrder = new UCSupplier();
-            this.panel3.Controls.Add(SupplierOrder);         
+            this.panel3.Controls.Add(SupplierOrder);
             SupplierOrder.BringToFront();
             SupplierOrder.Dock = DockStyle.Fill;
 
@@ -200,15 +204,13 @@ namespace DesktopApp
 
         private void clientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UCClient client = new UCClient();
-            this.panel3.Controls.Add(client);
-            client.BringToFront();
-            client.Dock = DockStyle.Fill;
-
-            UCAddClient AddReport = new UCAddClient();
-            client.panel4.Controls.Add(AddReport);
-            AddReport.BringToFront();
-            AddReport.Dock = DockStyle.Fill;
+            frmClient U_AL = new frmClient("Maintain Client");
+            U_AL.TopLevel = false;
+            U_AL.AutoScroll = true;
+            panel3.Controls.Add(U_AL);
+            U_AL.Show();
+            U_AL.Dock = DockStyle.Fill;
+            U_AL.BringToFront();
         }
 
         private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -221,18 +223,27 @@ namespace DesktopApp
 
         private void notificationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UCNotification1 notification = new UCNotification1();
-            panel3.Controls.Add(notification);
-            notification.BringToFront();
-            notification.Dock = DockStyle.Fill;
+           
+
+            frmNotification U_AL = new frmNotification("Maintain Template");
+            U_AL.TopLevel = false;
+            U_AL.AutoScroll = true;
+            panel3.Controls.Add(U_AL);
+            U_AL.Show();
+            U_AL.Dock = DockStyle.Fill;
+            U_AL.BringToFront();
+
         }
 
         private void updateCompanyInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UCUpdateCompanyInfo CompanyInfo = new UCUpdateCompanyInfo();
-            panel3.Controls.Add(CompanyInfo);
-            CompanyInfo.BringToFront();
-            CompanyInfo.Dock = DockStyle.Fill;
+            frmCompanyInformation U_AL = new frmCompanyInformation();
+            U_AL.TopLevel = false;
+            U_AL.AutoScroll = true;
+            panel3.Controls.Add(U_AL);
+            U_AL.Show();
+            U_AL.Dock = DockStyle.Fill;
+            U_AL.BringToFront();
         }
 
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
@@ -264,7 +275,7 @@ namespace DesktopApp
             DatabaseSettings.BringToFront();
             DatabaseSettings.Dock = DockStyle.Fill;
 
-            
+
 
         }
 
@@ -306,7 +317,7 @@ namespace DesktopApp
             Employee.BringToFront();
             Employee.Dock = DockStyle.Fill;
 
-            UCAddEmployee AddEmployee= new UCAddEmployee();
+            UCAddEmployee AddEmployee = new UCAddEmployee();
             Employee.panel4.Controls.Add(AddEmployee);
             AddEmployee.BringToFront();
             AddEmployee.Dock = DockStyle.Fill;
@@ -314,7 +325,41 @@ namespace DesktopApp
 
         private void signINOUTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void newReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReport U_AL = new frmReport();
+            U_AL.TopLevel = false;
+            U_AL.AutoScroll = true;
+            panel3.Controls.Add(U_AL);
+            U_AL.Show();
+            U_AL.Dock = DockStyle.Fill;
+            U_AL.BringToFront();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void auditLogReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAuditReports f = new frmAuditReports();
+            f.ShowDialog();
+        }
+
+        private void outstandingDeliveriesReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOustandingDeli_1 f = new frmOustandingDeli_1();
+            f.ShowDialog();
+        }
+
+        private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSalesReportDatePick f = new frmSalesReportDatePick();
+            f.ShowDialog();
         }
     }
 }

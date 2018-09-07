@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SmartPac_DatabaseModelStoreContainer" CdmEntityContainer="SmartPac_DatabaseEntities">
+    <EntitySetMapping Name="Access_Level">
+      <EntityTypeMapping TypeName="SmartPac_DatabaseModel.Access_Level">
+        <MappingFragment StoreEntitySet="Access_Level">
+          <ScalarProperty Name="Access_Level_Id" ColumnName="Access_Level_Id" />
+          <ScalarProperty Name="Access_Level_Name" ColumnName="Access_Level_Name" />
+          <ScalarProperty Name="Access_Level_Description" ColumnName="Access_Level_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notice_Template">
+      <EntityTypeMapping TypeName="SmartPac_DatabaseModel.Notice_Template">
+        <MappingFragment StoreEntitySet="Notice_Template">
+          <ScalarProperty Name="Template_ID" ColumnName="Template_ID" />
+          <ScalarProperty Name="Template_Description" ColumnName="Template_Description" />
+          <ScalarProperty Name="Template_Text" ColumnName="Template_Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SmartPac_DatabaseModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

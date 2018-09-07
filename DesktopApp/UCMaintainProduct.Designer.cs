@@ -73,7 +73,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.outstandingDelDs1 = new DesktopApp.OutstandingDelDs();
+           // this.outstandingDelDs1 = new DesktopApp.OutstandingDelDs();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -84,7 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.outstandingDelDs1)).BeginInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.outstandingDelDs1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -504,9 +504,9 @@
             this.label2.Text = "Product Description:";
             // 
             // outstandingDelDs1
-            // 
-            this.outstandingDelDs1.DataSetName = "OutstandingDelDs";
-            this.outstandingDelDs1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+           // // 
+           // this.outstandingDelDs1.DataSetName = "OutstandingDelDs";
+           // this.outstandingDelDs1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // contextMenuStrip1
             // 
@@ -554,7 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.outstandingDelDs1)).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.outstandingDelDs1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -579,7 +579,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private OutstandingDelDs outstandingDelDs1;
+       // private OutstandingDelDs outstandingDelDs1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;

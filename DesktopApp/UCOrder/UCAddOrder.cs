@@ -22,11 +22,14 @@ namespace DesktopApp
         {
             frmInvoice f = new frmInvoice();
             f.ShowDialog();
-             
+
+
+            MessageBox.Show("Please add products to the supplier order");
             MessageBox.Show("Please fill in all required fields");
             MessageBox.Show( "Are you sure you want to place this order?","confirmation", MessageBoxButtons.YesNo);
             MessageBox.Show("Purchase order has been placed successfully");
             MessageBox.Show("Order Total exceeds client credit limit");
+           
         }
     }
 }

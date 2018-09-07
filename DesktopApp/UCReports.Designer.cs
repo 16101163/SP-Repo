@@ -164,9 +164,9 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox2.Location = new System.Drawing.Point(-3, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(-3, -3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(124, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(124, 56);
             this.pictureBox2.TabIndex = 33;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -368,9 +368,9 @@
             this.lblTitle.Font = new System.Drawing.Font("Maiandra GD", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(470, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(102, 32);
+            this.lblTitle.Size = new System.Drawing.Size(112, 32);
             this.lblTitle.TabIndex = 5;
-            this.lblTitle.Text = "Report";
+            this.lblTitle.Text = "Reports";
             // 
             // panel4
             // 
