@@ -24,10 +24,11 @@
     <EntitySetMapping Name="Audit_Log">
       <EntityTypeMapping TypeName="SPModel.Audit_Log">
         <MappingFragment StoreEntitySet="Audit_Log">
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee_Id" />
+          <ScalarProperty Name="User_Time" ColumnName="User_Time" />
           <ScalarProperty Name="Audit_Log_Id" ColumnName="Audit_Log_Id" />
           <ScalarProperty Name="Table_Name" ColumnName="Table_Name" />
           <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
-          <ScalarProperty Name="Users_Id" ColumnName="Users_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -72,6 +73,8 @@
     <EntitySetMapping Name="Clients">
       <EntityTypeMapping TypeName="SPModel.Client">
         <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="Postal_Code_Id" ColumnName="Postal_Code_Id" />
+          <ScalarProperty Name="Email_Notification" ColumnName="Email_Notification" />
           <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
           <ScalarProperty Name="Client_Name" ColumnName="Client_Name" />
           <ScalarProperty Name="Client_VAT_Reg_Number" ColumnName="Client_VAT_Reg_Number" />
@@ -114,6 +117,7 @@
     <EntitySetMapping Name="Client_Purchase_Order_Line">
       <EntityTypeMapping TypeName="SPModel.Client_Purchase_Order_Line">
         <MappingFragment StoreEntitySet="Client_Purchase_Order_Line">
+          <ScalarProperty Name="Order_Price_ID" ColumnName="Order_Price_ID" />
           <ScalarProperty Name="Client_Purchase_Order_Line_ID" ColumnName="Client_Purchase_Order_Line_ID" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="Client_Purchase_Id" ColumnName="Client_Purchase_Id" />
@@ -148,14 +152,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Credit_Authorization">
-      <EntityTypeMapping TypeName="SPModel.Credit_Authorization">
-        <MappingFragment StoreEntitySet="Credit_Authorization">
-          <ScalarProperty Name="Credit_Authorization_ID" ColumnName="Credit_Authorization_ID" />
-          <ScalarProperty Name="Credit_Authorization_Description" ColumnName="Credit_Authorization_Description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Credit_Return">
       <EntityTypeMapping TypeName="SPModel.Credit_Return">
         <MappingFragment StoreEntitySet="Credit_Return">
@@ -163,7 +159,6 @@
           <ScalarProperty Name="Credit_Return_Date" ColumnName="Credit_Return_Date" />
           <ScalarProperty Name="Returned_By" ColumnName="Returned_By" />
           <ScalarProperty Name="Received_By" ColumnName="Received_By" />
-          <ScalarProperty Name="Credit_Authorization_ID" ColumnName="Credit_Authorization_ID" />
           <ScalarProperty Name="CR_Number" ColumnName="CR_Number" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -262,19 +257,11 @@
     <EntitySetMapping Name="Order_Unit_Price">
       <EntityTypeMapping TypeName="SPModel.Order_Unit_Price">
         <MappingFragment StoreEntitySet="Order_Unit_Price">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Order_Price_Year" ColumnName="Order_Price_Year" />
           <ScalarProperty Name="Order_Price_ID" ColumnName="Order_Price_ID" />
           <ScalarProperty Name="Order_Price" ColumnName="Order_Price" />
           <ScalarProperty Name="OP_Number" ColumnName="OP_Number" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Order_Unit_Price_Log">
-      <EntityTypeMapping TypeName="SPModel.Order_Unit_Price_Log">
-        <MappingFragment StoreEntitySet="Order_Unit_Price_Log">
-          <ScalarProperty Name="Order_Price_Log_ID" ColumnName="Order_Price_Log_ID" />
-          <ScalarProperty Name="Order_Price_ID" ColumnName="Order_Price_ID" />
-          <ScalarProperty Name="Order_Price" ColumnName="Order_Price" />
-          <ScalarProperty Name="Order_Price_Year" ColumnName="Order_Price_Year" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -325,8 +312,6 @@
           <ScalarProperty Name="Length_ID" ColumnName="Length_ID" />
           <ScalarProperty Name="Width_ID" ColumnName="Width_ID" />
           <ScalarProperty Name="Image_ID" ColumnName="Image_ID" />
-          <ScalarProperty Name="Sales_Price_ID" ColumnName="Sales_Price_ID" />
-          <ScalarProperty Name="Order_Price_ID" ColumnName="Order_Price_ID" />
           <ScalarProperty Name="PR_Number" ColumnName="PR_Number" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -413,6 +398,7 @@
     <EntitySetMapping Name="Sales_Order_line">
       <EntityTypeMapping TypeName="SPModel.Sales_Order_line">
         <MappingFragment StoreEntitySet="Sales_Order_line">
+          <ScalarProperty Name="Sales_Price_ID" ColumnName="Sales_Price_ID" />
           <ScalarProperty Name="Sales_Order_line_Id" ColumnName="Sales_Order_line_Id" />
           <ScalarProperty Name="Product_Quantity" ColumnName="Product_Quantity" />
           <ScalarProperty Name="Sale_Id" ColumnName="Sale_Id" />
@@ -423,19 +409,11 @@
     <EntitySetMapping Name="Sales_Unit_Price">
       <EntityTypeMapping TypeName="SPModel.Sales_Unit_Price">
         <MappingFragment StoreEntitySet="Sales_Unit_Price">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Sales_Price_Year" ColumnName="Sales_Price_Year" />
           <ScalarProperty Name="Sales_Price_ID" ColumnName="Sales_Price_ID" />
           <ScalarProperty Name="Sales_Price" ColumnName="Sales_Price" />
           <ScalarProperty Name="SP_Number" ColumnName="SP_Number" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Sales_Unit_Price_log">
-      <EntityTypeMapping TypeName="SPModel.Sales_Unit_Price_log">
-        <MappingFragment StoreEntitySet="Sales_Unit_Price_log">
-          <ScalarProperty Name="Sales_Price_Log_ID" ColumnName="Sales_Price_Log_ID" />
-          <ScalarProperty Name="Sales_Price" ColumnName="Sales_Price" />
-          <ScalarProperty Name="Sales_Price_Year" ColumnName="Sales_Price_Year" />
-          <ScalarProperty Name="Sales_Price_ID" ColumnName="Sales_Price_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

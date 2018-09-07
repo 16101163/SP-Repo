@@ -16,7 +16,7 @@
     <Property Name="Audit_Create_Delete_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PK_Row_Effected" Type="Int32" />
     <Property Name="Created" Type="Boolean" />
-    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Value" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
     <Property Name="Audit_Log_Id" Type="Int32" />
     <NavigationProperty Name="Audit_Log" Relationship="Self.FK__Audit_Cre__Audit__693CA210" FromRole="Audit_Create_Delete" ToRole="Audit_Log" />
   </EntityType>
@@ -25,12 +25,15 @@
       <PropertyRef Name="Audit_Log_Id" />
     </Key>
     <Property Name="Audit_Log_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Table_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Table_Name" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
     <Property Name="Date_Time" Type="DateTime" Precision="3" />
     <Property Name="Users_Id" Type="Int32" />
     <NavigationProperty Name="Audit_Create_Delete" Relationship="Self.FK__Audit_Cre__Audit__693CA210" FromRole="Audit_Log" ToRole="Audit_Create_Delete" />
     <NavigationProperty Name="User" Relationship="Self.FK__Audit_Log__Users__66603565" FromRole="Audit_Log" ToRole="Users" />
     <NavigationProperty Name="Audit_Update" Relationship="Self.FK__Audit_Upd__Audit__0E6E26BF" FromRole="Audit_Log" ToRole="Audit_Update" />
+    <Property Name="User_Time" Type="Time" Precision="7" />
+    <Property Name="Employee_Id" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="SPModel.FK__Audit_Log__Emplo__114A936A" FromRole="Audit_Log" ToRole="Employee" />
   </EntityType>
   <EntityType Name="Audit_Update">
     <Key>
@@ -38,9 +41,9 @@
     </Key>
     <Property Name="Audit_Update_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PK_Row_Effected" Type="Int32" />
-    <Property Name="Field_Effected" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="Before_Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="After_Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Field_Effected" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+    <Property Name="Before_Value" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+    <Property Name="After_Value" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
     <Property Name="Audit_Log_Id" Type="Int32" />
     <NavigationProperty Name="Audit_Log" Relationship="Self.FK__Audit_Upd__Audit__0E6E26BF" FromRole="Audit_Update" ToRole="Audit_Log" />
   </EntityType>
@@ -76,8 +79,8 @@
       <PropertyRef Name="Client_ID" />
     </Key>
     <Property Name="Client_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Client_Name" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
-    <Property Name="Client_VAT_Reg_Number" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Name" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+    <Property Name="Client_VAT_Reg_Number" Type="String" />
     <Property Name="Client_Telephone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
     <Property Name="Client_Fax_Number" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
     <Property Name="Physical_Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -92,6 +95,8 @@
     <NavigationProperty Name="Credit_Approval" Relationship="Self.FK__Client__Credit_A__75A278F5" FromRole="Client" ToRole="Credit_Approval" />
     <NavigationProperty Name="Province" Relationship="Self.FK__Client__Province__72C60C4A" FromRole="Client" ToRole="Province" />
     <NavigationProperty Name="Client_Purchase_Order" Relationship="Self.FK__Client_Pu__Clien__2B0A656D" FromRole="Client" ToRole="Client_Purchase_Order" />
+    <Property Name="Email_Notification" Type="Decimal" Precision="1" Scale="0" />
+    <Property Name="Postal_Code_Id" Type="Int32" />
   </EntityType>
   <EntityType Name="Client_Account_Status">
     <Key>
@@ -134,19 +139,21 @@
     <NavigationProperty Name="Client_Purchase_Order" Relationship="Self.FK__Client_Pu__Clien__2FCF1A8A" FromRole="Client_Purchase_Order_Line" ToRole="Client_Purchase_Order" />
     <NavigationProperty Name="Product" Relationship="Self.FK__Client_Pu__Produ__30C33EC3" FromRole="Client_Purchase_Order_Line" ToRole="Product" />
     <NavigationProperty Name="Credit_Return_Line" Relationship="Self.FK__Credit_Re__Clien__3D2915A8" FromRole="Client_Purchase_Order_Line" ToRole="Credit_Return_Line" />
+    <Property Name="Order_Price_ID" Type="Int32" />
+    <NavigationProperty Name="Order_Unit_Price" Relationship="SPModel.FK__Client_Pu__Order__208CD6FA" FromRole="Client_Purchase_Order_Line" ToRole="Order_Unit_Price" />
   </EntityType>
   <EntityType Name="Company_Information">
     <Key>
       <PropertyRef Name="Company_Id" />
     </Key>
     <Property Name="Company_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Company_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Company_Address" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-    <Property Name="VAT_Number" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
-    <Property Name="VAT_Percentage" Type="Decimal" Precision="5" Scale="2" />
-    <Property Name="Registration_Number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-    <Property Name="Email_Address" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="Telephone_Number" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Company_Name" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="Company_Address" Type="String" MaxLength="300" FixedLength="true" Unicode="false" />
+    <Property Name="VAT_Number" Type="String" />
+    <Property Name="VAT_Percentage" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="Registration_Number" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="Email_Address" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+    <Property Name="Telephone_Number" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Credit_Approval">
     <Key>
@@ -157,7 +164,7 @@
     <Property Name="Authourised_By" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
     <Property Name="Date_Of_Commencement" Type="DateTime" Precision="3" />
     <Property Name="Credit_Status_ID" Type="Int32" />
-    <Property Name="Credit_Approval_Form" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Credit_Approval_Form" Type="Binary" MaxLength="255" FixedLength="true" />
     <Property Name="CA_Number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="Clients" Relationship="Self.FK__Client__Credit_A__75A278F5" FromRole="Credit_Approval" ToRole="Client" />
     <NavigationProperty Name="Credit_Status" Relationship="Self.FK__Credit_Ap__Credi__6EF57B66" FromRole="Credit_Approval" ToRole="Credit_Status" />
@@ -234,8 +241,8 @@
       <PropertyRef Name="Template_Id" />
     </Key>
     <Property Name="Template_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Template_Description" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-    <Property Name="Template_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Template_Description" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Template_Text" Type="String" MaxLength="1000" FixedLength="true" Unicode="false" />
   </EntityType>
   <EntityType Name="Employee">
     <Key>
@@ -259,6 +266,7 @@
     <NavigationProperty Name="Employee_Type" Relationship="Self.FK__Employee__Employ__619B8048" FromRole="Employee" ToRole="Employee_Type" />
     <NavigationProperty Name="Title" Relationship="Self.FK__Employee__Title___6383C8BA" FromRole="Employee" ToRole="Title" />
     <NavigationProperty Name="User" Relationship="Self.FK__Employee__Users___628FA481" FromRole="Employee" ToRole="Users" />
+    <NavigationProperty Name="Audit_Log" Relationship="SPModel.FK__Audit_Log__Emplo__114A936A" FromRole="Employee" ToRole="Audit_Log" />
   </EntityType>
   <EntityType Name="Employee_Logsheet">
     <Key>
@@ -291,6 +299,10 @@
     <Property Name="OP_Number" Type="String" MaxLength="6" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="Order_Unit_Price_Log" Relationship="Self.FK__Order_Uni__Order__2E1BDC42" FromRole="Order_Unit_Price" ToRole="Order_Unit_Price_Log" />
     <NavigationProperty Name="Products" Relationship="Self.FK__Product__Order_P__02084FDA" FromRole="Order_Unit_Price" ToRole="Product" />
+    <Property Name="Order_Price_Year" Type="DateTime" Precision="0" />
+    <Property Name="Product_ID" Type="Int32" />
+    <NavigationProperty Name="Client_Purchase_Order_Line" Relationship="SPModel.FK__Client_Pu__Order__208CD6FA" FromRole="Order_Unit_Price" ToRole="Client_Purchase_Order_Line" />
+    <NavigationProperty Name="Product" Relationship="SPModel.FK__Order_Uni__Produ__2BFE89A6" FromRole="Order_Unit_Price" ToRole="Product" />
   </EntityType>
   <EntityType Name="Order_Unit_Price_Log">
     <Key>
@@ -366,6 +378,8 @@
     <NavigationProperty Name="Width" Relationship="Self.FK__Product__Width_I__7F2BE32F" FromRole="Product" ToRole="Width" />
     <NavigationProperty Name="Sales_Order_line" Relationship="Self.FK__Sales_Ord__Produ__3864608B" FromRole="Product" ToRole="Sales_Order_line" />
     <NavigationProperty Name="Supplier_Order_Line" Relationship="Self.FK__Supplier___Produ__339FAB6E" FromRole="Product" ToRole="Supplier_Order_Line" />
+    <NavigationProperty Name="Order_Unit_Price1" Relationship="SPModel.FK__Order_Uni__Produ__2BFE89A6" FromRole="Product" ToRole="Order_Unit_Price" />
+    <NavigationProperty Name="Sales_Unit_Price1" Relationship="SPModel.FK__Sales_Uni__Produ__395884C4" FromRole="Product" ToRole="Sales_Unit_Price" />
   </EntityType>
   <EntityType Name="Product_Brand">
     <Key>
@@ -433,8 +447,8 @@
       <PropertyRef Name="Sale_Id" />
     </Key>
     <Property Name="Sale_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Amount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Sale_Date" Type="DateTime" Precision="0" />
+    <Property Name="Amount" Type="String" />
+    <Property Name="Sale_Date" Type="DateTime" Precision="3" />
     <Property Name="CS_Number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="Sales_Order_line" Relationship="Self.FK__Sales_Ord__Sale___37703C52" FromRole="Sale" ToRole="Sales_Order_line" />
   </EntityType>
@@ -458,6 +472,8 @@
     <NavigationProperty Name="Product" Relationship="Self.FK__Sales_Ord__Produ__3864608B" FromRole="Sales_Order_line" ToRole="Product" />
     <NavigationProperty Name="Refund_Line" Relationship="Self.FK__Refund_Li__Sales__44CA3770" FromRole="Sales_Order_line" ToRole="Refund_Line" />
     <NavigationProperty Name="Sale" Relationship="Self.FK__Sales_Ord__Sale___37703C52" FromRole="Sales_Order_line" ToRole="Sale" />
+    <Property Name="Sales_Price_ID" Type="Int32" />
+    <NavigationProperty Name="Sales_Unit_Price" Relationship="SPModel.FK__Sales_Ord__Sales__3864608B" FromRole="Sales_Order_line" ToRole="Sales_Unit_Price" />
   </EntityType>
   <EntityType Name="Sales_Unit_Price">
     <Key>
@@ -468,6 +484,10 @@
     <Property Name="SP_Number" Type="String" MaxLength="6" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="Products" Relationship="Self.FK__Product__Sales_P__01142BA1" FromRole="Sales_Unit_Price" ToRole="Product" />
     <NavigationProperty Name="Sales_Unit_Price_log" Relationship="Self.FK__Sales_Uni__Sales__38996AB5" FromRole="Sales_Unit_Price" ToRole="Sales_Unit_Price_log" />
+    <Property Name="Sales_Price_Year" Type="DateTime" Precision="0" />
+    <Property Name="Product_ID" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="SPModel.FK__Sales_Uni__Produ__395884C4" FromRole="Sales_Unit_Price" ToRole="Product" />
+    <NavigationProperty Name="Sales_Order_line" Relationship="SPModel.FK__Sales_Ord__Sales__3864608B" FromRole="Sales_Unit_Price" ToRole="Sales_Order_line" />
   </EntityType>
   <EntityType Name="Sales_Unit_Price_log">
     <Key>
@@ -1485,5 +1505,85 @@
       <End Role="Vehicle_Status" EntitySet="Vehicle_Status" />
       <End Role="Vehicle" EntitySet="Vehicles" />
     </AssociationSet>
+    <AssociationSet Name="FK__Audit_Log__Emplo__114A936A" Association="SPModel.FK__Audit_Log__Emplo__114A936A">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Audit_Log" EntitySet="Audit_Log" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Client_Pu__Order__208CD6FA" Association="SPModel.FK__Client_Pu__Order__208CD6FA">
+      <End Role="Order_Unit_Price" EntitySet="Order_Unit_Price" />
+      <End Role="Client_Purchase_Order_Line" EntitySet="Client_Purchase_Order_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order_Uni__Produ__2BFE89A6" Association="SPModel.FK__Order_Uni__Produ__2BFE89A6">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Order_Unit_Price" EntitySet="Order_Unit_Price" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sales_Uni__Produ__395884C4" Association="SPModel.FK__Sales_Uni__Produ__395884C4">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Sales_Unit_Price" EntitySet="Sales_Unit_Price" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sales_Ord__Sales__3864608B" Association="SPModel.FK__Sales_Ord__Sales__3864608B">
+      <End Role="Sales_Unit_Price" EntitySet="Sales_Unit_Price" />
+      <End Role="Sales_Order_line" EntitySet="Sales_Order_line" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK__Audit_Log__Emplo__114A936A">
+    <End Type="SPModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="SPModel.Audit_Log" Role="Audit_Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employee_Id" />
+      </Principal>
+      <Dependent Role="Audit_Log">
+        <PropertyRef Name="Employee_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Client_Pu__Order__208CD6FA">
+    <End Type="SPModel.Order_Unit_Price" Role="Order_Unit_Price" Multiplicity="0..1" />
+    <End Type="SPModel.Client_Purchase_Order_Line" Role="Client_Purchase_Order_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Unit_Price">
+        <PropertyRef Name="Order_Price_ID" />
+      </Principal>
+      <Dependent Role="Client_Purchase_Order_Line">
+        <PropertyRef Name="Order_Price_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order_Uni__Produ__2BFE89A6">
+    <End Type="SPModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="SPModel.Order_Unit_Price" Role="Order_Unit_Price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Product_ID" />
+      </Principal>
+      <Dependent Role="Order_Unit_Price">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sales_Uni__Produ__395884C4">
+    <End Type="SPModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="SPModel.Sales_Unit_Price" Role="Sales_Unit_Price" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Product_ID" />
+      </Principal>
+      <Dependent Role="Sales_Unit_Price">
+        <PropertyRef Name="Product_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sales_Ord__Sales__3864608B">
+    <End Type="SPModel.Sales_Unit_Price" Role="Sales_Unit_Price" Multiplicity="0..1" />
+    <End Type="SPModel.Sales_Order_line" Role="Sales_Order_line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sales_Unit_Price">
+        <PropertyRef Name="Sales_Price_ID" />
+      </Principal>
+      <Dependent Role="Sales_Order_line">
+        <PropertyRef Name="Sales_Price_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

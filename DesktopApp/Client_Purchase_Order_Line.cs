@@ -24,10 +24,12 @@ namespace DesktopApp
         public Nullable<int> Quantity { get; set; }
         public Nullable<int> Client_Purchase_Id { get; set; }
         public Nullable<int> Product_ID { get; set; }
+        public Nullable<int> Order_Price_ID { get; set; }
     
         public virtual Client_Purchase_Order Client_Purchase_Order { get; set; }
         public virtual Product Product { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Credit_Return_Line> Credit_Return_Line { get; set; }
+        public virtual Order_Unit_Price Order_Unit_Price { get; set; }
     }
 }

@@ -32,6 +32,8 @@ namespace DesktopApp
         public Nullable<int> Account_Status_ID { get; set; }
         public Nullable<int> Credit_Approval_ID { get; set; }
         public string CL_Number { get; set; }
+        public Nullable<decimal> Email_Notification { get; set; }
+        public Nullable<int> Postal_Code_Id { get; set; }
     
         public virtual City City { get; set; }
         public virtual Client_Account_Status Client_Account_Status { get; set; }

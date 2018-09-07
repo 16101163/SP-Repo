@@ -19,15 +19,21 @@ namespace DesktopApp
         {
             this.Products = new HashSet<Product>();
             this.Sales_Unit_Price_log = new HashSet<Sales_Unit_Price_log>();
+            this.Sales_Order_line = new HashSet<Sales_Order_line>();
         }
     
         public int Sales_Price_ID { get; set; }
         public Nullable<decimal> Sales_Price { get; set; }
         public string SP_Number { get; set; }
+        public Nullable<System.DateTime> Sales_Price_Year { get; set; }
+        public Nullable<int> Product_ID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sales_Unit_Price_log> Sales_Unit_Price_log { get; set; }
+        public virtual Product Product { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sales_Order_line> Sales_Order_line { get; set; }
     }
 }

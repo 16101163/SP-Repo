@@ -110,6 +110,11 @@
         <AssociationConnector Association="SPModel.FK__Supplier___Suppl__17F790F9" ManuallyRouted="false" />
         <AssociationConnector Association="SPModel.FK__Supplier___Suppl__3493CFA7" ManuallyRouted="false" />
         <AssociationConnector Association="SPModel.FK__Vehicle__Vehicle__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Audit_Log__Emplo__114A936A" />
+        <AssociationConnector Association="SPModel.FK__Client_Pu__Order__208CD6FA" />
+        <AssociationConnector Association="SPModel.FK__Order_Uni__Produ__2BFE89A6" />
+        <AssociationConnector Association="SPModel.FK__Sales_Uni__Produ__395884C4" />
+        <AssociationConnector Association="SPModel.FK__Sales_Ord__Sales__3864608B" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
