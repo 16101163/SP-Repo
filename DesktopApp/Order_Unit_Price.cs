@@ -17,21 +17,15 @@ namespace DesktopApp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Order_Unit_Price()
         {
-            this.Order_Unit_Price_Log = new HashSet<Order_Unit_Price_Log>();
-            this.Products = new HashSet<Product>();
             this.Client_Purchase_Order_Line = new HashSet<Client_Purchase_Order_Line>();
         }
     
         public int Order_Price_ID { get; set; }
         public Nullable<decimal> Order_Price { get; set; }
-        public string OP_Number { get; set; }
         public Nullable<System.DateTime> Order_Price_Year { get; set; }
         public Nullable<int> Product_ID { get; set; }
+        public string OP_Number { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order_Unit_Price_Log> Order_Unit_Price_Log { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Client_Purchase_Order_Line> Client_Purchase_Order_Line { get; set; }
         public virtual Product Product { get; set; }

@@ -17,7 +17,6 @@ namespace DesktopApp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Audit_Log = new HashSet<Audit_Log>();
             this.Employees = new HashSet<Employee>();
             this.Suppliers = new HashSet<Supplier>();
         }
@@ -28,9 +27,6 @@ namespace DesktopApp
         public string User_Password { get; set; }
         public Nullable<int> Access_Level_Id { get; set; }
     
-        public virtual Access_Level Access_Level { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Audit_Log> Audit_Log { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -12,6 +12,8 @@ namespace DesktopApp
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class SPEntities : DbContext
     {
@@ -25,7 +27,6 @@ namespace DesktopApp
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Access_Level> Access_Level { get; set; }
         public virtual DbSet<Audit_Create_Delete> Audit_Create_Delete { get; set; }
         public virtual DbSet<Audit_Log> Audit_Log { get; set; }
         public virtual DbSet<Audit_Update> Audit_Update { get; set; }
@@ -38,7 +39,6 @@ namespace DesktopApp
         public virtual DbSet<Client_Purchase_Order_Line> Client_Purchase_Order_Line { get; set; }
         public virtual DbSet<Company_Information> Company_Information { get; set; }
         public virtual DbSet<Credit_Approval> Credit_Approval { get; set; }
-        public virtual DbSet<Credit_Authorization> Credit_Authorization { get; set; }
         public virtual DbSet<Credit_Return> Credit_Return { get; set; }
         public virtual DbSet<Credit_Return_Line> Credit_Return_Line { get; set; }
         public virtual DbSet<Credit_Status> Credit_Status { get; set; }
@@ -49,11 +49,11 @@ namespace DesktopApp
         public virtual DbSet<Employee_Logsheet> Employee_Logsheet { get; set; }
         public virtual DbSet<Employee_Type> Employee_Type { get; set; }
         public virtual DbSet<Order_Unit_Price> Order_Unit_Price { get; set; }
-        public virtual DbSet<Order_Unit_Price_Log> Order_Unit_Price_Log { get; set; }
         public virtual DbSet<Pack_Size> Pack_Size { get; set; }
         public virtual DbSet<Payment_Term> Payment_Term { get; set; }
         public virtual DbSet<pLength> pLengths { get; set; }
         public virtual DbSet<Ply> Plies { get; set; }
+        public virtual DbSet<Postal_Code> Postal_Code { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Product_Brand> Product_Brand { get; set; }
         public virtual DbSet<Product_Image> Product_Image { get; set; }
@@ -66,7 +66,6 @@ namespace DesktopApp
         public virtual DbSet<Sale_Refund> Sale_Refund { get; set; }
         public virtual DbSet<Sales_Order_line> Sales_Order_line { get; set; }
         public virtual DbSet<Sales_Unit_Price> Sales_Unit_Price { get; set; }
-        public virtual DbSet<Sales_Unit_Price_log> Sales_Unit_Price_log { get; set; }
         public virtual DbSet<Sheet> Sheets { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<Supplier_Backorder> Supplier_Backorder { get; set; }
@@ -78,5 +77,57 @@ namespace DesktopApp
         public virtual DbSet<Vehicle> Vehicles { get; set; }
         public virtual DbSet<Vehicle_Status> Vehicle_Status { get; set; }
         public virtual DbSet<Width> Widths { get; set; }
+        public virtual DbSet<Access_Level> Access_Level { get; set; }
+    
+        public virtual ObjectResult<Nullable<decimal>> Create_Purchase_Order_Line(Nullable<int> qty, Nullable<int> prodid, Nullable<int> poid)
+        {
+            var qtyParameter = qty.HasValue ?
+                new ObjectParameter("qty", qty) :
+                new ObjectParameter("qty", typeof(int));
+    
+            var prodidParameter = prodid.HasValue ?
+                new ObjectParameter("prodid", prodid) :
+                new ObjectParameter("prodid", typeof(int));
+    
+            var poidParameter = poid.HasValue ?
+                new ObjectParameter("poid", poid) :
+                new ObjectParameter("poid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("Create_Purchase_Order_Line", qtyParameter, prodidParameter, poidParameter);
+        }
+    
+        public virtual ObjectResult<Delete_Purchase_Order_Line_Result> Delete_Purchase_Order_Line()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Delete_Purchase_Order_Line_Result>("Delete_Purchase_Order_Line");
+        }
+    
+        public virtual ObjectResult<GetPOL_Result> GetPOL(Nullable<int> poid)
+        {
+            var poidParameter = poid.HasValue ?
+                new ObjectParameter("poid", poid) :
+                new ObjectParameter("poid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetPOL_Result>("GetPOL", poidParameter);
+        }
+    
+        public virtual ObjectResult<Load_Credit_Return_Result> Load_Credit_Return()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Load_Credit_Return_Result>("Load_Credit_Return");
+        }
+    
+        public virtual ObjectResult<Load_Purcase_Order_Line_Result> Load_Purcase_Order_Line()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Load_Purcase_Order_Line_Result>("Load_Purcase_Order_Line");
+        }
+    
+        public virtual ObjectResult<Load_Purchase_Order_Result> Load_Purchase_Order()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Load_Purchase_Order_Result>("Load_Purchase_Order");
+        }
+    
+        public virtual ObjectResult<Update_Purchase_Order_Line_Result> Update_Purchase_Order_Line()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Update_Purchase_Order_Line_Result>("Update_Purchase_Order_Line");
+        }
     }
 }

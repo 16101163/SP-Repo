@@ -17,9 +17,9 @@ namespace DesktopApp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee()
         {
+            this.Audit_Log = new HashSet<Audit_Log>();
             this.Dispatches = new HashSet<Dispatch>();
             this.Employee_Logsheet = new HashSet<Employee_Logsheet>();
-            this.Audit_Log = new HashSet<Audit_Log>();
         }
     
         public int Employee_Id { get; set; }
@@ -37,13 +37,13 @@ namespace DesktopApp
         public string EMP_Number { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Audit_Log> Audit_Log { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Dispatch> Dispatches { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee_Logsheet> Employee_Logsheet { get; set; }
         public virtual Employee_Type Employee_Type { get; set; }
         public virtual Title Title { get; set; }
         public virtual User User { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Audit_Log> Audit_Log { get; set; }
     }
 }

@@ -1,15 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="SPModelStoreContainer" CdmEntityContainer="SPEntities">
-    <EntitySetMapping Name="Access_Level">
-      <EntityTypeMapping TypeName="SPModel.Access_Level">
-        <MappingFragment StoreEntitySet="Access_Level">
-          <ScalarProperty Name="Access_Level_Id" ColumnName="Access_Level_Id" />
-          <ScalarProperty Name="Access_Level_Name" ColumnName="Access_Level_Name" />
-          <ScalarProperty Name="Access_Level_Description" ColumnName="Access_Level_Description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Audit_Create_Delete">
       <EntityTypeMapping TypeName="SPModel.Audit_Create_Delete">
         <MappingFragment StoreEntitySet="Audit_Create_Delete">
@@ -24,11 +15,11 @@
     <EntitySetMapping Name="Audit_Log">
       <EntityTypeMapping TypeName="SPModel.Audit_Log">
         <MappingFragment StoreEntitySet="Audit_Log">
-          <ScalarProperty Name="Employee_Id" ColumnName="Employee_Id" />
-          <ScalarProperty Name="User_Time" ColumnName="User_Time" />
           <ScalarProperty Name="Audit_Log_Id" ColumnName="Audit_Log_Id" />
           <ScalarProperty Name="Table_Name" ColumnName="Table_Name" />
           <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="User_Time" ColumnName="User_Time" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -73,17 +64,17 @@
     <EntitySetMapping Name="Clients">
       <EntityTypeMapping TypeName="SPModel.Client">
         <MappingFragment StoreEntitySet="Client">
-          <ScalarProperty Name="Postal_Code_Id" ColumnName="Postal_Code_Id" />
-          <ScalarProperty Name="Email_Notification" ColumnName="Email_Notification" />
           <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
           <ScalarProperty Name="Client_Name" ColumnName="Client_Name" />
           <ScalarProperty Name="Client_VAT_Reg_Number" ColumnName="Client_VAT_Reg_Number" />
           <ScalarProperty Name="Client_Telephone" ColumnName="Client_Telephone" />
           <ScalarProperty Name="Client_Fax_Number" ColumnName="Client_Fax_Number" />
+          <ScalarProperty Name="Email_Notification" ColumnName="Email_Notification" />
           <ScalarProperty Name="Physical_Address" ColumnName="Physical_Address" />
           <ScalarProperty Name="Client_Email_Address" ColumnName="Client_Email_Address" />
           <ScalarProperty Name="Province_Id" ColumnName="Province_Id" />
           <ScalarProperty Name="City_Id" ColumnName="City_Id" />
+          <ScalarProperty Name="Postal_Code_Id" ColumnName="Postal_Code_Id" />
           <ScalarProperty Name="Account_Status_ID" ColumnName="Account_Status_ID" />
           <ScalarProperty Name="Credit_Approval_ID" ColumnName="Credit_Approval_ID" />
           <ScalarProperty Name="CL_Number" ColumnName="CL_Number" />
@@ -117,9 +108,9 @@
     <EntitySetMapping Name="Client_Purchase_Order_Line">
       <EntityTypeMapping TypeName="SPModel.Client_Purchase_Order_Line">
         <MappingFragment StoreEntitySet="Client_Purchase_Order_Line">
-          <ScalarProperty Name="Order_Price_ID" ColumnName="Order_Price_ID" />
           <ScalarProperty Name="Client_Purchase_Order_Line_ID" ColumnName="Client_Purchase_Order_Line_ID" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Order_Price_ID" ColumnName="Order_Price_ID" />
           <ScalarProperty Name="Client_Purchase_Id" ColumnName="Client_Purchase_Id" />
           <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
         </MappingFragment>
@@ -132,7 +123,6 @@
           <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
           <ScalarProperty Name="Company_Address" ColumnName="Company_Address" />
           <ScalarProperty Name="VAT_Number" ColumnName="VAT_Number" />
-          <ScalarProperty Name="VAT_Percentage" ColumnName="VAT_Percentage" />
           <ScalarProperty Name="Registration_Number" ColumnName="Registration_Number" />
           <ScalarProperty Name="Email_Address" ColumnName="Email_Address" />
           <ScalarProperty Name="Telephone_Number" ColumnName="Telephone_Number" />
@@ -257,10 +247,10 @@
     <EntitySetMapping Name="Order_Unit_Price">
       <EntityTypeMapping TypeName="SPModel.Order_Unit_Price">
         <MappingFragment StoreEntitySet="Order_Unit_Price">
-          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
-          <ScalarProperty Name="Order_Price_Year" ColumnName="Order_Price_Year" />
           <ScalarProperty Name="Order_Price_ID" ColumnName="Order_Price_ID" />
           <ScalarProperty Name="Order_Price" ColumnName="Order_Price" />
+          <ScalarProperty Name="Order_Price_Year" ColumnName="Order_Price_Year" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
           <ScalarProperty Name="OP_Number" ColumnName="OP_Number" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -295,6 +285,14 @@
         <MappingFragment StoreEntitySet="Ply">
           <ScalarProperty Name="Ply_ID" ColumnName="Ply_ID" />
           <ScalarProperty Name="Number_Of_Ply" ColumnName="Number_Of_Ply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Postal_Code">
+      <EntityTypeMapping TypeName="SPModel.Postal_Code">
+        <MappingFragment StoreEntitySet="Postal_Code">
+          <ScalarProperty Name="Postal_Code_Id" ColumnName="Postal_Code_Id" />
+          <ScalarProperty Name="Postal_Code1" ColumnName="Postal_Code" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -398,9 +396,9 @@
     <EntitySetMapping Name="Sales_Order_line">
       <EntityTypeMapping TypeName="SPModel.Sales_Order_line">
         <MappingFragment StoreEntitySet="Sales_Order_line">
-          <ScalarProperty Name="Sales_Price_ID" ColumnName="Sales_Price_ID" />
           <ScalarProperty Name="Sales_Order_line_Id" ColumnName="Sales_Order_line_Id" />
           <ScalarProperty Name="Product_Quantity" ColumnName="Product_Quantity" />
+          <ScalarProperty Name="Sales_Price_ID" ColumnName="Sales_Price_ID" />
           <ScalarProperty Name="Sale_Id" ColumnName="Sale_Id" />
           <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
         </MappingFragment>
@@ -409,10 +407,10 @@
     <EntitySetMapping Name="Sales_Unit_Price">
       <EntityTypeMapping TypeName="SPModel.Sales_Unit_Price">
         <MappingFragment StoreEntitySet="Sales_Unit_Price">
-          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
-          <ScalarProperty Name="Sales_Price_Year" ColumnName="Sales_Price_Year" />
           <ScalarProperty Name="Sales_Price_ID" ColumnName="Sales_Price_ID" />
           <ScalarProperty Name="Sales_Price" ColumnName="Sales_Price" />
+          <ScalarProperty Name="Sales_Price_Year" ColumnName="Sales_Price_Year" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
           <ScalarProperty Name="SP_Number" ColumnName="SP_Number" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -526,5 +524,85 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Access_Level">
+      <EntityTypeMapping TypeName="SPModel.Access_Level">
+        <MappingFragment StoreEntitySet="Access_Level">
+          <ScalarProperty Name="Access_Level_Id" ColumnName="Access_Level_Id" />
+          <ScalarProperty Name="Access_Level_Name" ColumnName="Access_Level_Name" />
+          <ScalarProperty Name="Access_Level_Description" ColumnName="Access_Level_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Create_Purchase_Order_Line" FunctionName="SPModel.Store.Create_Purchase_Order_Line" />
+    <FunctionImportMapping FunctionImportName="Delete_Purchase_Order_Line" FunctionName="SPModel.Store.Delete_Purchase_Order_Line">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SPModel.Delete_Purchase_Order_Line_Result">
+          <ScalarProperty Name="Client_Purchase_Order_Line_ID" ColumnName="Client_Purchase_Order_Line_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Order_Price" ColumnName="Order_Price" />
+          <ScalarProperty Name="PO_Number" ColumnName="PO_Number" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPOL" FunctionName="SPModel.Store.GetPOL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SPModel.GetPOL_Result">
+          <ScalarProperty Name="Client_Purchase_Order_Line_ID" ColumnName="Client_Purchase_Order_Line_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Order_Price" ColumnName="Order_Price" />
+          <ScalarProperty Name="PO_Number" ColumnName="PO_Number" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Load_Credit_Return" FunctionName="SPModel.Store.Load_Credit_Return">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SPModel.Load_Credit_Return_Result">
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="CR_Number" ColumnName="CR Number" />
+          <ScalarProperty Name="Reason_for_Return" ColumnName="Reason for Return" />
+          <ScalarProperty Name="PO_Number" ColumnName="PO_Number" />
+          <ScalarProperty Name="Credit_Return_Amount" ColumnName="Credit_Return_Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Load_Purcase_Order_Line" FunctionName="SPModel.Store.Load_Purcase_Order_Line">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SPModel.Load_Purcase_Order_Line_Result">
+          <ScalarProperty Name="Client_Purchase_Order_Line_ID" ColumnName="Client_Purchase_Order_Line_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Order_Price" ColumnName="Order_Price" />
+          <ScalarProperty Name="PO_Number" ColumnName="PO_Number" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Load_Purchase_Order" FunctionName="SPModel.Store.Load_Purchase_Order">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SPModel.Load_Purchase_Order_Result">
+          <ScalarProperty Name="PO_Number" ColumnName="PO_Number" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="Gross_Amount" ColumnName="Gross_Amount" />
+          <ScalarProperty Name="Payment_Term_Description" ColumnName="Payment_Term_Description" />
+          <ScalarProperty Name="Purchase_Order_Status_Description" ColumnName="Purchase_Order_Status_Description" />
+          <ScalarProperty Name="SO_Number" ColumnName="SO_Number" />
+          <ScalarProperty Name="Client_Name" ColumnName="Client_Name" />
+          <ScalarProperty Name="Dispatch_Type_Description" ColumnName="Dispatch_Type_Description" />
+          <ScalarProperty Name="DP_Number" ColumnName="DP_Number" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Update_Purchase_Order_Line" FunctionName="SPModel.Store.Update_Purchase_Order_Line">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SPModel.Update_Purchase_Order_Line_Result">
+          <ScalarProperty Name="Client_Purchase_Order_Line_ID" ColumnName="Client_Purchase_Order_Line_ID" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Order_Price" ColumnName="Order_Price" />
+          <ScalarProperty Name="PO_Number" ColumnName="PO_Number" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -18,10 +18,10 @@ namespace DesktopApp
         public Product()
         {
             this.Client_Purchase_Order_Line = new HashSet<Client_Purchase_Order_Line>();
+            this.Order_Unit_Price = new HashSet<Order_Unit_Price>();
             this.Sales_Order_line = new HashSet<Sales_Order_line>();
+            this.Sales_Unit_Price = new HashSet<Sales_Unit_Price>();
             this.Supplier_Order_Line = new HashSet<Supplier_Order_Line>();
-            this.Order_Unit_Price1 = new HashSet<Order_Unit_Price>();
-            this.Sales_Unit_Price1 = new HashSet<Sales_Unit_Price>();
         }
     
         public int Product_ID { get; set; }
@@ -35,29 +35,25 @@ namespace DesktopApp
         public Nullable<int> Length_ID { get; set; }
         public Nullable<int> Width_ID { get; set; }
         public Nullable<int> Image_ID { get; set; }
-        public Nullable<int> Sales_Price_ID { get; set; }
-        public Nullable<int> Order_Price_ID { get; set; }
         public string PR_Number { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Client_Purchase_Order_Line> Client_Purchase_Order_Line { get; set; }
-        public virtual Order_Unit_Price Order_Unit_Price { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order_Unit_Price> Order_Unit_Price { get; set; }
         public virtual Pack_Size Pack_Size { get; set; }
         public virtual pLength pLength { get; set; }
         public virtual Ply Ply { get; set; }
         public virtual Product_Image Product_Image { get; set; }
         public virtual Product_Type Product_Type { get; set; }
         public virtual Product_Brand Product_Brand { get; set; }
-        public virtual Sales_Unit_Price Sales_Unit_Price { get; set; }
         public virtual Sheet Sheet { get; set; }
         public virtual Width Width { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sales_Order_line> Sales_Order_line { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sales_Unit_Price> Sales_Unit_Price { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Supplier_Order_Line> Supplier_Order_Line { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order_Unit_Price> Order_Unit_Price1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sales_Unit_Price> Sales_Unit_Price1 { get; set; }
     }
 }

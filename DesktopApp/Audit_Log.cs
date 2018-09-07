@@ -24,15 +24,13 @@ namespace DesktopApp
         public int Audit_Log_Id { get; set; }
         public string Table_Name { get; set; }
         public Nullable<System.DateTime> Date_Time { get; set; }
-        public Nullable<int> Users_Id { get; set; }
         public Nullable<System.TimeSpan> User_Time { get; set; }
         public Nullable<int> Employee_Id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Audit_Create_Delete> Audit_Create_Delete { get; set; }
-        public virtual User User { get; set; }
+        public virtual Employee Employee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Audit_Update> Audit_Update { get; set; }
-        public virtual Employee Employee { get; set; }
     }
 }

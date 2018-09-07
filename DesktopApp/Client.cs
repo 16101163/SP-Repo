@@ -22,22 +22,23 @@ namespace DesktopApp
     
         public int Client_ID { get; set; }
         public string Client_Name { get; set; }
-        public string Client_VAT_Reg_Number { get; set; }
+        public Nullable<long> Client_VAT_Reg_Number { get; set; }
         public string Client_Telephone { get; set; }
         public string Client_Fax_Number { get; set; }
+        public Nullable<decimal> Email_Notification { get; set; }
         public string Physical_Address { get; set; }
         public string Client_Email_Address { get; set; }
         public Nullable<int> Province_Id { get; set; }
         public Nullable<int> City_Id { get; set; }
+        public Nullable<int> Postal_Code_Id { get; set; }
         public Nullable<int> Account_Status_ID { get; set; }
         public Nullable<int> Credit_Approval_ID { get; set; }
         public string CL_Number { get; set; }
-        public Nullable<decimal> Email_Notification { get; set; }
-        public Nullable<int> Postal_Code_Id { get; set; }
     
         public virtual City City { get; set; }
         public virtual Client_Account_Status Client_Account_Status { get; set; }
         public virtual Credit_Approval Credit_Approval { get; set; }
+        public virtual Postal_Code Postal_Code { get; set; }
         public virtual Province Province { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Client_Purchase_Order> Client_Purchase_Order { get; set; }

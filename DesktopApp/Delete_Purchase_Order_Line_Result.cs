@@ -10,16 +10,13 @@
 namespace DesktopApp
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Audit_Create_Delete
+    public partial class Delete_Purchase_Order_Line_Result
     {
-        public int Audit_Create_Delete_Id { get; set; }
-        public string PK_Row_Effected { get; set; }
-        public string Created { get; set; }
-        public string Value { get; set; }
-        public Nullable<int> Audit_Log_Id { get; set; }
-    
-        public virtual Audit_Log Audit_Log { get; set; }
+        public int Client_Purchase_Order_Line_ID { get; set; }
+        public Nullable<int> Product_ID { get; set; }
+        public Nullable<int> Quantity { get; set; }
+        public Nullable<decimal> Order_Price { get; set; }
+        public string PO_Number { get; set; }
     }
 }

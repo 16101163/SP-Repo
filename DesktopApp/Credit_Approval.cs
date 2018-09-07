@@ -25,7 +25,7 @@ namespace DesktopApp
         public string Authourised_By { get; set; }
         public Nullable<System.DateTime> Date_Of_Commencement { get; set; }
         public Nullable<int> Credit_Status_ID { get; set; }
-        public byte[] Credit_Approval_Form { get; set; }
+        public string Credit_Approval_Form { get; set; }
         public string CA_Number { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

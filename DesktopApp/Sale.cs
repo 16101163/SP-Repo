@@ -21,7 +21,7 @@ namespace DesktopApp
         }
     
         public int Sale_Id { get; set; }
-        public string Amount { get; set; }
+        public Nullable<decimal> Amount { get; set; }
         public Nullable<System.DateTime> Sale_Date { get; set; }
         public string CS_Number { get; set; }
     

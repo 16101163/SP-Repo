@@ -24,10 +24,8 @@ namespace DesktopApp
         public Nullable<System.DateTime> Credit_Return_Date { get; set; }
         public string Returned_By { get; set; }
         public string Received_By { get; set; }
-        public Nullable<int> Credit_Authorization_ID { get; set; }
         public string CR_Number { get; set; }
     
-        public virtual Credit_Authorization Credit_Authorization { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Credit_Return_Line> Credit_Return_Line { get; set; }
     }

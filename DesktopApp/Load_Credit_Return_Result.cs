@@ -10,16 +10,13 @@
 namespace DesktopApp
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Audit_Create_Delete
+    public partial class Load_Credit_Return_Result
     {
-        public int Audit_Create_Delete_Id { get; set; }
-        public string PK_Row_Effected { get; set; }
-        public string Created { get; set; }
-        public string Value { get; set; }
-        public Nullable<int> Audit_Log_Id { get; set; }
-    
-        public virtual Audit_Log Audit_Log { get; set; }
+        public Nullable<int> Quantity { get; set; }
+        public string CR_Number { get; set; }
+        public string Reason_for_Return { get; set; }
+        public string PO_Number { get; set; }
+        public Nullable<decimal> Credit_Return_Amount { get; set; }
     }
 }

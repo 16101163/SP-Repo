@@ -12,18 +12,18 @@ namespace DesktopApp
     using System;
     using System.Collections.Generic;
     
-    public partial class Credit_Authorization
+    public partial class Postal_Code
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Credit_Authorization()
+        public Postal_Code()
         {
-            this.Credit_Return = new HashSet<Credit_Return>();
+            this.Clients = new HashSet<Client>();
         }
     
-        public int Credit_Authorization_ID { get; set; }
-        public string Credit_Authorization_Description { get; set; }
+        public int Postal_Code_Id { get; set; }
+        public Nullable<int> Postal_Code1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Credit_Return> Credit_Return { get; set; }
+        public virtual ICollection<Client> Clients { get; set; }
     }
 }

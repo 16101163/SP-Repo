@@ -4,117 +4,109 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0401b52555814914a0b9b0729a6e5165" Name="Diagram1">
-        <EntityTypeShape EntityType="SPModel.Access_Level" Width="1.5" PointX="1.5" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Audit_Create_Delete" Width="1.5" PointX="6" PointY="62.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Audit_Log" Width="1.5" PointX="3.75" PointY="63.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Audit_Update" Width="1.5" PointX="6" PointY="65.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Backorder_Line" Width="1.5" PointX="10.5" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Backorder_Status" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.City" Width="1.5" PointX="1.5" PointY="34" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Client" Width="1.5" PointX="3.75" PointY="36.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Client_Account_Status" Width="1.5" PointX="1.5" PointY="36.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Client_Purchase_Order" Width="1.5" PointX="6" PointY="44.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Client_Purchase_Order_Line" Width="1.5" PointX="8.25" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Company_Information" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Credit_Approval" Width="1.5" PointX="1.5" PointY="38.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Credit_Authorization" Width="1.5" PointX="9" PointY="17" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Credit_Return" Width="1.5" PointX="11.25" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Credit_Return_Line" Width="1.5" PointX="13.5" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Credit_Status" Width="1.5" PointX="1.5" PointY="42.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Dispatch" Width="1.5" PointX="3.75" PointY="50.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Dispatch_Type" Width="1.5" PointX="3.75" PointY="54.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Email_Notice_Template" Width="1.5" PointX="13.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Employee" Width="1.5" PointX="1.5" PointY="47.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Employee_Logsheet" Width="1.5" PointX="3.75" PointY="46.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Employee_Type" Width="1.5" PointX="1.5" PointY="52.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Order_Unit_Price" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Order_Unit_Price_Log" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Pack_Size" Width="1.5" PointX="3.75" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Payment_Term" Width="1.5" PointX="3.75" PointY="56.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.pLength" Width="1.5" PointX="3.75" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Ply" Width="1.5" PointX="3.75" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Product" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Product_Brand" Width="1.5" PointX="3.75" PointY="18.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Product_Image" Width="1.5" PointX="3.75" PointY="20.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Product_Type" Width="1.5" PointX="3.75" PointY="23.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Province" Width="1.5" PointX="1.5" PointY="45.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Purchase_Order_Status" Width="1.5" PointX="3.75" PointY="59.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Reason_For_Return" Width="1.5" PointX="11.25" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Refund_Line" Width="1.5" PointX="16.5" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Sale" Width="1.5" PointX="9" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Sale_Refund" Width="1.5" PointX="14.25" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Sales_Order_line" Width="1.5" PointX="11.25" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Sales_Unit_Price" Width="1.5" PointX="3.75" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Sales_Unit_Price_log" Width="1.5" PointX="6" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Sheet" Width="1.5" PointX="3.75" PointY="28.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Supplier" Width="1.5" PointX="3.75" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Supplier_Backorder" Width="1.5" PointX="8.25" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Supplier_Order" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Supplier_Order_Line" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Supplier_Order_Status" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Title" Width="1.5" PointX="1.5" PointY="55.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.User" Width="1.5" PointX="1.5" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Vehicle" Width="1.5" PointX="1.5" PointY="57.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Vehicle_Status" Width="1.5" PointX="1.5" PointY="62.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SPModel.Width" Width="1.5" PointX="3.75" PointY="30.875" IsExpanded="true" />
-        <AssociationConnector Association="SPModel.FK__Users__Access_Le__5DCAEF64" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Audit_Cre__Audit__693CA210" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Audit_Log__Users__66603565" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Audit_Upd__Audit__0E6E26BF" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Backorder__Suppl__40058253" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Backorder__Suppl__40F9A68C" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Supplier___Backo__32E0915F" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Client__City_Id__73BA3083" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Client__Account___74AE54BC" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Client__Credit_A__75A278F5" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Client__Province__72C60C4A" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Client_Pu__Clien__2B0A656D" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Client_Pu__Clien__2FCF1A8A" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Client_Pu__Dispa__2BFE89A6" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Client_Pu__Dispa__2CF2ADDF" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Client_Pu__Payme__29221CFB" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Client_Pu__Purch__2A164134" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Client_Pu__Suppl__282DF8C2" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Client_Pu__Produ__30C33EC3" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Credit_Re__Clien__3D2915A8" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Credit_Ap__Credi__6EF57B66" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Credit_Re__Credi__0B91BA14" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Credit_Re__Credi__3B40CD36" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Credit_Re__Reaso__3C34F16F" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Dispatch__Employ__1F98B2C1" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Dispatch__Vehicl__208CD6FA" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Employee___Emplo__1BC821DD" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Employee__Employ__619B8048" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Employee__Title___6383C8BA" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Employee__Users___628FA481" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Order_Uni__Order__2E1BDC42" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Product__Order_P__02084FDA" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Product__Pack_Si__7C4F7684" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Product__Length___7E37BEF6" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Product__Ply_ID__7B5B524B" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Product__Image_I__00200768" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Product__Product__797309D9" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Product__Product__7A672E12" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Product__Sales_P__01142BA1" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Product__Sheet_I__7D439ABD" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Product__Width_I__7F2BE32F" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Sales_Ord__Produ__3864608B" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Supplier___Produ__339FAB6E" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Refund_Li__Sale___43D61337" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Refund_Li__Sales__44CA3770" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Sales_Ord__Sale___37703C52" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Sales_Uni__Sales__38996AB5" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Supplier___Suppl__18EBB532" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Supplier__Users___123EB7A3" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Supplier___Suppl__17F790F9" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Supplier___Suppl__3493CFA7" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Vehicle__Vehicle__05D8E0BE" ManuallyRouted="false" />
-        <AssociationConnector Association="SPModel.FK__Audit_Log__Emplo__114A936A" />
-        <AssociationConnector Association="SPModel.FK__Client_Pu__Order__208CD6FA" />
-        <AssociationConnector Association="SPModel.FK__Order_Uni__Produ__2BFE89A6" />
-        <AssociationConnector Association="SPModel.FK__Sales_Uni__Produ__395884C4" />
-        <AssociationConnector Association="SPModel.FK__Sales_Ord__Sales__3864608B" />
+      <Diagram DiagramId="c5b485bda7724dd2826fc9ddafd9b587" Name="Diagram1">
+        <EntityTypeShape EntityType="SPModel.Audit_Create_Delete" Width="1.5" PointX="5.25" PointY="72.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Audit_Log" Width="1.5" PointX="3" PointY="73.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Audit_Update" Width="1.5" PointX="5.25" PointY="75.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Backorder_Line" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Backorder_Status" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.City" Width="1.5" PointX="0.75" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Client" Width="1.5" PointX="3" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Client_Account_Status" Width="1.5" PointX="0.75" PointY="35" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Client_Purchase_Order" Width="1.5" PointX="5.25" PointY="44.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Client_Purchase_Order_Line" Width="1.5" PointX="7.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Company_Information" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Credit_Approval" Width="1.5" PointX="0.75" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Credit_Return" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Credit_Return_Line" Width="1.5" PointX="9.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Credit_Status" Width="1.5" PointX="1.5" PointY="41.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Dispatch" Width="1.5" PointX="3" PointY="52.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Dispatch_Type" Width="1.5" PointX="3" PointY="49.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Email_Notice_Template" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Employee" Width="1.5" PointX="0.75" PointY="49.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Employee_Logsheet" Width="1.5" PointX="3" PointY="45.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Employee_Type" Width="1.5" PointX="1.5" PointY="56.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Order_Unit_Price" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Pack_Size" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Payment_Term" Width="1.5" PointX="3" PointY="62" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.pLength" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Ply" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Postal_Code" Width="1.5" PointX="0.75" PointY="44.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Product" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Product_Brand" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Product_Image" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Product_Type" Width="1.5" PointX="0.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Province" Width="1.5" PointX="0.75" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Purchase_Order_Status" Width="1.5" PointX="3" PointY="69.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Reason_For_Return" Width="1.5" PointX="7.5" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Refund_Line" Width="1.5" PointX="9.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Sale" Width="1.5" PointX="5.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Sale_Refund" Width="1.5" PointX="7.5" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Sales_Order_line" Width="1.5" PointX="7.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Sales_Unit_Price" Width="1.5" PointX="5.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Sheet" Width="1.5" PointX="0.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Supplier" Width="1.5" PointX="0.75" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Supplier_Backorder" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Supplier_Order" Width="1.5" PointX="3" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Supplier_Order_Line" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Supplier_Order_Status" Width="1.5" PointX="0.75" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Title" Width="1.5" PointX="1.5" PointY="59.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.User" Width="1.5" PointX="1.5" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Vehicle" Width="1.5" PointX="0.75" PointY="61.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Vehicle_Status" Width="1.5" PointX="1.5" PointY="66.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Width" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPModel.Access_Level" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="SPModel.FK__Audit_Cre__Audit__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Audit_Log__Emplo__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Audit_Upd__Audit__114A936A" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Backorder__Suppl__123EB7A3" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Backorder__Suppl__1332DBDC" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Supplier___Backo__3A4CA8FD" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client__City_Id__151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client__Account___14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client__Credit_A__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client__Postal_C__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client__Province__17F790F9" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client_Pu__Clien__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client_Pu__Clien__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client_Pu__Dispa__19DFD96B" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client_Pu__Dispa__1AD3FDA4" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client_Pu__Payme__1BC821DD" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client_Pu__Purch__1CBC4616" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client_Pu__Suppl__1DB06A4F" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client_Pu__Order__1F98B2C1" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Client_Pu__Produ__208CD6FA" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Credit_Re__Clien__22751F6C" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Credit_Ap__Credi__2180FB33" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Credit_Re__Credi__236943A5" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Credit_Re__Reaso__245D67DE" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Dispatch__Employ__25518C17" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Dispatch__Vehicl__2645B050" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Employee___Emplo__2A164134" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Employee__Employ__2739D489" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Employee__Title___282DF8C2" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Employee__Users___29221CFB" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Order_Uni__Produ__2B0A656D" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Product__Pack_Si__2DE6D218" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Product__Length___2CF2ADDF" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Product__Ply_ID__2EDAF651" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Product__Image_I__2BFE89A6" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Product__Product__2FCF1A8A" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Product__Product__30C33EC3" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Product__Sheet_I__31B762FC" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Product__Width_I__32AB8735" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Sales_Ord__Produ__3587F3E0" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Sales_Uni__Produ__3864608B" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Supplier___Produ__3D2915A8" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Refund_Li__Sale___339FAB6E" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Refund_Li__Sales__3493CFA7" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Sales_Ord__Sale___367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Sales_Ord__Sales__37703C52" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Supplier___Suppl__3C34F16F" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Supplier__Users___395884C4" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Supplier___Suppl__3B40CD36" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Supplier___Suppl__3E1D39E1" ManuallyRouted="false" />
+        <AssociationConnector Association="SPModel.FK__Vehicle__Vehicle__40058253" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

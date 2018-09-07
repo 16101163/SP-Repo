@@ -10,15 +10,13 @@
 namespace DesktopApp
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Sales_Unit_Price_log
+    public partial class Update_Purchase_Order_Line_Result
     {
-        public int Sales_Price_Log_ID { get; set; }
-        public Nullable<decimal> Sales_Price { get; set; }
-        public Nullable<System.DateTime> Sales_Price_Year { get; set; }
-        public Nullable<int> Sales_Price_ID { get; set; }
-    
-        public virtual Sales_Unit_Price Sales_Unit_Price { get; set; }
+        public int Client_Purchase_Order_Line_ID { get; set; }
+        public Nullable<int> Product_ID { get; set; }
+        public Nullable<int> Quantity { get; set; }
+        public Nullable<decimal> Order_Price { get; set; }
+        public string PO_Number { get; set; }
     }
 }

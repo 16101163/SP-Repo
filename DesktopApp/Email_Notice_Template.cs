@@ -14,7 +14,7 @@ namespace DesktopApp
     
     public partial class Email_Notice_Template
     {
-        public int Template_Id { get; set; }
+        public string Template_Id { get; set; }
         public string Template_Description { get; set; }
         public string Template_Text { get; set; }
     }

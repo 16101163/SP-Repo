@@ -15,7 +15,7 @@ namespace DesktopApp
     public partial class Audit_Update
     {
         public int Audit_Update_Id { get; set; }
-        public Nullable<int> PK_Row_Effected { get; set; }
+        public string PK_Row_Effected { get; set; }
         public string Field_Effected { get; set; }
         public string Before_Value { get; set; }
         public string After_Value { get; set; }

@@ -180,9 +180,6 @@
     <Compile Include="Credit_Approval.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
-    <Compile Include="Credit_Authorization.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
     <Compile Include="Credit_Return.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
@@ -190,6 +187,9 @@
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="Credit_Status.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delete_Purchase_Order_Line_Result.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="Dispatch.cs">
@@ -375,7 +375,19 @@
       <DependentUpon>frmUserLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="clsOrderDetail.cs" />
+    <Compile Include="GetPOL_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
     <Compile Include="Globals.cs" />
+    <Compile Include="Load_Credit_Return_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Load_Purcase_Order_Line_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Load_Purchase_Order_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
     <Compile Include="LopacTissues.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -397,9 +409,6 @@
     <Compile Include="Order_Unit_Price.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
-    <Compile Include="Order_Unit_Price_Log.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
     <Compile Include="Outstanding_Del_Report.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -416,6 +425,9 @@
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="Ply.cs">
+      <DependentUpon>SP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Postal_Code.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
@@ -468,9 +480,6 @@
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="Sales_Unit_Price.cs">
-      <DependentUpon>SP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Sales_Unit_Price_log.cs">
       <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="Sale_Refund.cs">
@@ -864,6 +873,9 @@
     </Compile>
     <Compile Include="UCViewOrders.Designer.cs">
       <DependentUpon>UCViewOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update_Purchase_Order_Line_Result.cs">
+      <DependentUpon>SP.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>SP.tt</DependentUpon>

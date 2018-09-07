@@ -18,9 +18,8 @@ namespace DesktopApp
         public string Company_Name { get; set; }
         public string Company_Address { get; set; }
         public string VAT_Number { get; set; }
-        public Nullable<decimal> VAT_Percentage { get; set; }
         public string Registration_Number { get; set; }
         public string Email_Address { get; set; }
-        public string Telephone_Number { get; set; }
+        public decimal Telephone_Number { get; set; }
     }
 }
